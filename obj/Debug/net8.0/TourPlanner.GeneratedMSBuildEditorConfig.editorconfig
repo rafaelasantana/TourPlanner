@@ -54,6 +54,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/CustomComponents/CustomDetailCard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21EZXRhaWxDYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/CustomComponents/CustomListItemWithActionsButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21MaXN0SXRlbVdpdGhBY3Rpb25zQnV0dG9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/CustomComponents/CustomPageHeader.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21QYWdlSGVhZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
