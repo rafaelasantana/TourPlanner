@@ -1,14 +1,47 @@
 ﻿@page "/tour-logs/edit"
 
-<CustomPageTitle Text="Edit Tour Log" />
-
+<CustomPageHeader Text="Edit Tour Log" />
+@*
 <form action="">
 
-    <FormFieldsForTourLog />
-    <FormSubmitAndDangerButtons SubmitButtonText="Apply Changes" DangerButtonText="Delete Tour Log" />
+<FormFieldsForTourLog />
+<FormSubmitAndDangerButtons SubmitButtonText="Apply Changes" DangerButtonText="Delete Tour Log" />
 
 </form>
 
 @code {
 
+} *@
+
+@* <EditForm Model="@tourLogModel" OnValidSubmit="@HandleValidSubmit">
+<InputText @bind-Value="tourLogModel.UserName" placeholder="User Name" class="form-control"/>
+<InputTextArea @bind-Value="tourLogModel.Comment" placeholder="Comment" class="form-control"/>
+
+<InputNumber @bind-Value="tourLogModel.Difficulty" class="form-control" min="1" max="5"/>
+<InputNumber @bind-Value="tourLogModel.TotalDistanceMeters" class="form-control" step="0.01"/>
+
+<InputDate @bind-Value="tourLogModel.CreatedOn" class="form-control"/>
+<input type="time" @bind="tourLogModel.TotalTime" class="form-control"/>
+
+<InputNumber @bind-Value="tourLogModel.Rating" class="form-control" min="1" max="10"/>
+
+<select @bind="tourLogModel.Difficulty" class="form-control">
+<option value="0">Select Difficulty</option>
+<option value="1">Easy</option>
+<option value="2">Moderate</option>
+<option value="3">Challenging</option>
+<option value="4">Hard</option>
+<option value="5">Expert</option>
+</select>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+@code {
+private TourLogModel tourLogModel = new TourLogModel();
+
+private void HandleValidSubmit()
+{
+// Submit logic here
 }
+} *@
