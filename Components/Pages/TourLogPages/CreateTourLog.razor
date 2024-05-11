@@ -1,0 +1,77 @@
+﻿@using TourPlanner.Services
+@inject TourService TourService
+@page "/tour-logs/create"
+
+<PageTitle>Create Tour Log</PageTitle>
+
+<CustomBodyContainerNarrow>
+    <CustomBodyWrapperRounded>
+        <CustomPageHeader Text="Create Tour Log"/>
+
+        <EditForm method="post" Model="@NewTour" OnValidSubmit="HandleValidSubmit" FormName="createTour" Enhance>
+
+            <DataAnnotationsValidator/>
+            <div class="row">
+
+                <CustomWrapperLarge>
+                    <label for="tourLogComment" class="form-label">Comment</label>
+                    <InputTextArea id="tourLogComment" class="form-control" @bind-Value="NewTour.Name"/>
+                    <ValidationMessage For="() => NewTour.Name" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+                <CustomWrapperLarge>
+                    <label for="tourName" class="form-label">Difficulty</label>
+                    <InputText id="tourName" class="form-control" @bind-Value="NewTour.Name"/>
+                    <ValidationMessage For="() => NewTour.Name" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+                <CustomWrapperLarge>
+                    <label for="tourName" class="form-label">Total Distance</label>
+                    <InputText id="tourName" class="form-control" @bind-Value="NewTour.Name"/>
+                    <ValidationMessage For="() => NewTour.Name" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+                <CustomWrapperLarge>
+                    <label for="tourName" class="form-label">Total Time</label>
+                    <InputText id="tourName" class="form-control" @bind-Value="NewTour.Name"/>
+                    <ValidationMessage For="() => NewTour.Name" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+                <CustomWrapperLarge>
+                    <label for="tourName" class="form-label">Rating</label>
+                    <InputText id="tourName" class="form-control" @bind-Value="NewTour.Name"/>
+                    <ValidationMessage For="() => NewTour.Name" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+            </div>
+            <ValidationSummary class="text-danger"/>
+
+            @if (!string.IsNullOrEmpty(ErrorMessage))
+            {
+            <div class="alert alert-danger" role="alert">
+                @ErrorMessage
+            </div>
+            }
+
+            <FormSubmitButtonSingle ButtonText="Create Tour"/>
+
+        </EditForm>
+    </CustomBodyWrapperRounded>
+</CustomBodyContainerNarrow>
+
+
+@code {
+    [SupplyParameterFromForm] public TourDTO NewTour { get; set; } = new();
+
+    private string? ErrorMessage { get; set; }
+
+    private async Task HandleValidSubmit()
+    {
+        var (createdTour, errorMessage) = await TourService.CreateTourAsync(NewTour);
+
+        if (createdTour != null)
+        {
+            Console.WriteLine("Tour created successfully. Tour ID: " + createdTour.Id);
+        }
+        else
+        {
+            Console.WriteLine("Failed to create the tour: " + errorMessage);
+            ErrorMessage = errorMessage;
+        }
+    }
+}

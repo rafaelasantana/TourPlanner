@@ -22,20 +22,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Pages/CreateTourLog.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DcmVhdGVUb3VyTG9nLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Pages/EditTour.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FZGl0VG91ci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Pages/EditTourLog.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FZGl0VG91ckxvZy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Pages/TourLogPages/CreateTourLog.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyTG9nUGFnZXMvQ3JlYXRlVG91ckxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Pages/TourLogPages/EditTourLog.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyTG9nUGFnZXMvRWRpdFRvdXJMb2cucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Pages/TourPages/AllTours.razor]
@@ -46,12 +42,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyUGFnZXMvQ3JlYXRlVG91ci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Pages/TourPages/EditTour.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyUGFnZXMvRWRpdFRvdXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Pages/TourPages/TourDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyUGFnZXMvVG91ckRldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/CustomComponents/CustomBodyContainerMedium.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21Cb2R5Q29udGFpbmVyTWVkaXVtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/CustomComponents/CustomBodyContainerNarrow.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21Cb2R5Q29udGFpbmVyTmFycm93LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/CustomComponents/CustomBodyContainerWide.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21Cb2R5Q29udGFpbmVyV2lkZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/CustomComponents/CustomBodyWrapperRounded.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21Cb2R5V3JhcHBlclJvdW5kZWQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/CustomComponents/CustomDetailCard.razor]
@@ -66,24 +82,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21QYWdlSGVhZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/FormComponents/FormFieldsForTour.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybUZpZWxkc0ZvclRvdXIucmF6b3I=
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/CustomComponents/CustomWrapperLarge.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21XcmFwcGVyTGFyZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/FormComponents/FormFieldsForTourLog.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybUZpZWxkc0ZvclRvdXJMb2cucmF6b3I=
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/CustomComponents/CustomWrapperSmall.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21XcmFwcGVyU21hbGwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/FormComponents/FormFieldWrapperLarge.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybUZpZWxkV3JhcHBlckxhcmdlLnJhem9y
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/DetailsComponents/DetailWrapper.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRGV0YWlsc0NvbXBvbmVudHMvRGV0YWlsV3JhcHBlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/FormComponents/FormFieldWrapperSmall.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybUZpZWxkV3JhcHBlclNtYWxsLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/FormComponents/FormSelectInput.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybVNlbGVjdElucHV0LnJhem9y
+[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/FormComponents/FormSingleTextInputAndButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybVNpbmdsZVRleHRJbnB1dEFuZEJ1dHRvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/FormComponents/FormSubmitAndDangerButtons.razor]
@@ -92,10 +104,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/FormComponents/FormSubmitButtonSingle.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybVN1Ym1pdEJ1dHRvblNpbmdsZS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/Shared/FormComponents/FormTextInput.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybVRleHRJbnB1dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/rafaelasantana/Documents/FHTW/FHTW_2024SS/SWEN2/TourPlanner/Components/_Imports.razor]
