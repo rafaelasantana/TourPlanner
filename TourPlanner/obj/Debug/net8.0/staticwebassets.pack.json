@@ -1,31 +1,31 @@
 {
   "Files": [
     {
-      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/obj/Debug/net8.0/scopedcss/projectbundle/TourPlanner.bundle.scp.css",
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/obj/Debug/net8.0/scopedcss/projectbundle/TourPlanner.bundle.scp.css",
       "PackagePath": "staticwebassets/TourPlanner.bundle.scp.css"
     },
     {
-      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/.DS_Store",
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/.DS_Store",
       "PackagePath": "staticwebassets/.DS_Store"
     },
     {
-      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/Images/map-placeholder.png",
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/Images/map-placeholder.png",
       "PackagePath": "staticwebassets/Images/map-placeholder.png"
     },
     {
-      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/app.css",
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/app.css",
       "PackagePath": "staticwebassets/app.css"
     },
     {
-      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/bootstrap/bootstrap.min.css",
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/bootstrap/bootstrap.min.css",
       "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
     },
     {
-      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/bootstrap/bootstrap.min.css.map",
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/bootstrap/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/favicon.png",
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/favicon.png",
       "PackagePath": "staticwebassets/favicon.png"
     },
     {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pDPC4GkrwGmmItoZNV+IcQ8XPQ3KdMzXzj1Dfq8kf84=",
+  "Hash": "aPSoMwassr7ECAYIJnL60bGmMFi6PzAoN96JUD+Wh/c=",
   "Source": "TourPlanner",
   "BasePath": "_content/TourPlanner",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "TourPlanner/wwwroot",
       "Source": "TourPlanner",
-      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/",
+      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/",
       "BasePath": "_content/TourPlanner",
       "Pattern": "**"
     }
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "/Users/rafaelasantana/.nuget/packages/radzen.blazor/4.31.4/staticwebassets/Radzen.Blazor.js"
     },
     {
-      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/obj/Debug/net8.0/scopedcss/bundle/TourPlanner.styles.css",
+      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/obj/Debug/net8.0/scopedcss/bundle/TourPlanner.styles.css",
       "SourceId": "TourPlanner",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/obj/Debug/net8.0/scopedcss/bundle/",
+      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/obj/Debug/net8.0/scopedcss/bundle/",
       "BasePath": "_content/TourPlanner",
       "RelativePath": "TourPlanner.styles.css",
       "AssetKind": "All",
@@ -964,13 +964,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/obj/Debug/net8.0/scopedcss/bundle/TourPlanner.styles.css"
+      "OriginalItemSpec": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/obj/Debug/net8.0/scopedcss/bundle/TourPlanner.styles.css"
     },
     {
-      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/obj/Debug/net8.0/scopedcss/projectbundle/TourPlanner.bundle.scp.css",
+      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/obj/Debug/net8.0/scopedcss/projectbundle/TourPlanner.bundle.scp.css",
       "SourceId": "TourPlanner",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/obj/Debug/net8.0/scopedcss/projectbundle/",
       "BasePath": "_content/TourPlanner",
       "RelativePath": "TourPlanner.bundle.scp.css",
       "AssetKind": "All",
@@ -983,13 +983,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/obj/Debug/net8.0/scopedcss/projectbundle/TourPlanner.bundle.scp.css"
+      "OriginalItemSpec": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/obj/Debug/net8.0/scopedcss/projectbundle/TourPlanner.bundle.scp.css"
     },
     {
-      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/.DS_Store",
+      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/.DS_Store",
       "SourceId": "TourPlanner",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/",
+      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/",
       "BasePath": "_content/TourPlanner",
       "RelativePath": ".DS_Store",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot/.DS_Store"
     },
     {
-      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/app.css",
+      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/app.css",
       "SourceId": "TourPlanner",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/",
+      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/",
       "BasePath": "_content/TourPlanner",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot/app.css"
     },
     {
-      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/bootstrap/bootstrap.min.css",
+      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/bootstrap/bootstrap.min.css",
       "SourceId": "TourPlanner",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/",
+      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/",
       "BasePath": "_content/TourPlanner",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -1043,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css"
     },
     {
-      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/bootstrap/bootstrap.min.css.map",
+      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/bootstrap/bootstrap.min.css.map",
       "SourceId": "TourPlanner",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/",
+      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/",
       "BasePath": "_content/TourPlanner",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1062,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/favicon.png",
+      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/favicon.png",
       "SourceId": "TourPlanner",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/",
+      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/",
       "BasePath": "_content/TourPlanner",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -1081,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot/favicon.png"
     },
     {
-      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/Images/map-placeholder.png",
+      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/Images/map-placeholder.png",
       "SourceId": "TourPlanner",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/",
+      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/",
       "BasePath": "_content/TourPlanner",
       "RelativePath": "Images/map-placeholder.png",
       "AssetKind": "All",
