@@ -57,11 +57,11 @@
                 <CustomWrapperLarge>
                     <label for="tourLogRating" class="form-label">Rating</label>
                     <InputSelect id="tourLogRating" class="form-control" @bind-Value="_viewModel.Rating">
-                        <option value="1">Great</option>
-                        <option value="2">Good</option>
+                        <option value="5">Great</option>
+                        <option value="4">Good</option>
                         <option value="3">OK</option>
-                        <option value="4">Bad</option>
-                        <option value="5">Awful</option>
+                        <option value="2">Bad</option>
+                        <option value="1">Awful</option>
                     </InputSelect>
                     <ValidationMessage For="() => _viewModel.Rating" class="text-danger"></ValidationMessage>
                 </CustomWrapperLarge>
