@@ -1,0 +1,81 @@
+@page "/tour/create"
+@using TourPlanner.Services
+@using TourPlanner.ViewModels.TourViewModels
+@inject TourService TourService
+@inject NavigationManager NavigationManager
+
+@rendermode InteractiveServer
+
+<PageTitle>Create Tour</PageTitle>
+
+<CustomBodyContainerNarrow>
+    <CustomBodyWrapperRounded>
+        <CustomPrimaryHeader Text="Create Tour"/>
+        <EditForm method="post" Model="@_viewModel" OnValidSubmit="@_viewModel.HandleValidSubmit" FormName="createTour" Enhance>
+            <DataAnnotationsValidator/>
+            <div class="row">
+                
+                <CustomWrapperLarge>
+                    @*<ViewModelRegion ViewModel="@_viewModel">
+                        <p>Name: @_viewModel.Name</p>
+                    </ViewModelRegion>*@
+                    <label for="tourName" class="form-label">Name</label>
+                    <InputText id="tourName" class="form-control" @bind-Value="_viewModel.Name"/>
+                    <ValidationMessage For="() => _viewModel.Name" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+
+                <CustomWrapperLarge>
+                    <label for="tourTransportType">Transport Type</label>
+                    <InputSelect id="tourTransportType" class="form-control" @bind-Value="_viewModel.TransportType">
+                        @foreach (var type in Enum.GetValues(typeof(TransportTypeModel)))
+                        {
+                            <option value="@type">@type</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="() => _viewModel.TransportType" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+
+                <CustomWrapperSmall>
+                    <label for="tourStartingPoint" class="form-label">Starting Point</label>
+                    <InputText id="tourStartingPoint" class="form-control" @bind-Value="_viewModel.Start"/>
+                    <ValidationMessage For="() => _viewModel.Start" class="text-danger"></ValidationMessage>
+                </CustomWrapperSmall>
+
+                <CustomWrapperSmall>
+                    <label for="tourEndPoint" class="form-label">End Point</label>
+                    <InputText id="tourEndPoint" class="form-control" @bind-Value="_viewModel.End"/>
+                    <ValidationMessage For="() => _viewModel.End" class="text-danger"></ValidationMessage>
+                </CustomWrapperSmall>
+
+                <CustomWrapperLarge>
+                    <label for="tourDescription" class="form-label">Description</label>
+                    <InputTextArea id="tourDescription" class="form-control" @bind-Value="_viewModel.Description"/>
+                    <ValidationMessage For="() => _viewModel.Description" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+            </div>
+
+            <ValidationSummary class="text-danger"/>
+
+            @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+            {
+                <div class="alert alert-danger" role="alert">
+                    @_viewModel.ErrorMessage
+                </div>
+            }
+
+            <FormSubmitButtonSingle ButtonText="Create Tour"/>
+        </EditForm>
+    </CustomBodyWrapperRounded>
+</CustomBodyContainerNarrow>
+
+
+@code {
+    private CreateTourViewModel _viewModel = null!;
+
+    protected override void OnInitialized()
+    {
+        _viewModel = new CreateTourViewModel(TourService, NavigationManager);
+    }
+}
+
+

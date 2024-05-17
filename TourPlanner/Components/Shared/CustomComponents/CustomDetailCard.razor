@@ -1,0 +1,14 @@
+<div class="card m-1" style="border-radius: 1.5rem">
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">@CardLabel</h6>
+        <p class="card-text">@CardText</p>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string? CardLabel { get; set; }
+
+    [Parameter]
+    public string? CardText { get; set; }
+}

@@ -1,0 +1,26 @@
+﻿<div class="row d-flex justify-content-between">
+    <div class="col-12 col-md-6 d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary my-3 custom-form-button rounded-pill">
+            <i class="bi bi-check-circle"></i>
+            <span class="ms-2">@SubmitButtonText</span>
+        </button>
+    </div>
+    <div class="col-12 col-md-6 d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-danger my-3 custom-form-button rounded-pill" @onclick="OnDangerButtonClick">
+            
+            <i class="bi bi-trash"></i>
+            <span class="ms-2">@DangerButtonText</span>
+        </button>
+    </div>
+</div>
+
+@code {
+[Parameter]
+public string SubmitButtonText { get; set; } = "Submit"; // Default text for primary button
+
+[Parameter]
+public string DangerButtonText { get; set; } = "Delete"; // Default text for secondary button
+
+[Parameter]
+public EventCallback OnDangerButtonClick { get; set; } // Event callback for danger button click
+}

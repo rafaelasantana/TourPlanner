@@ -1,0 +1,25 @@
+<div class="modal" style="display:block; background-color: rgba(0,0,0,0.5);">
+    <div class="modal-content">
+        <p>@Message</p>
+        <button @onclick="Confirm">Confirm</button>
+        <button @onclick="Cancel">Cancel</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Message { get; set; } = "Are you sure you want to proceed?";
+
+    [Parameter]
+    public EventCallback<bool> OnConfirm { get; set; }
+
+    private void Confirm()
+    {
+        OnConfirm.InvokeAsync(true);
+    }
+
+    private void Cancel()
+    {
+        OnConfirm.InvokeAsync(false);
+    }
+}

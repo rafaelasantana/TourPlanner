@@ -1,0 +1,27 @@
+<a href="@Url" class="@ButtonClass @(string.IsNullOrEmpty(ButtonText) ? "rounded-pill" : "")" style="width: @(string.IsNullOrEmpty(ButtonText) ? ButtonWidth : "6rem"); border-radius: @BorderRadius; margin-right: 0.2rem">
+    <i class="@IconClass"></i>
+    @if (!string.IsNullOrEmpty(ButtonText))
+    {    
+        <span class="ms-1">@ButtonText</span>
+    }
+</a>
+
+@code {
+    [Parameter]
+    public string Url { get; set; } = string.Empty;
+
+    [Parameter]
+    public string? ButtonText { get; set; }
+
+    [Parameter]
+    public string ButtonClass { get; set; } = "btn btn-outline-secondary";
+
+    [Parameter]
+    public string ButtonWidth { get; set; } = "3rem";
+
+    [Parameter]
+    public string BorderRadius { get; set; } = "0.5rem";
+
+    [Parameter]
+    public string IconClass { get; set; } = "bi bi-info-circle";
+}

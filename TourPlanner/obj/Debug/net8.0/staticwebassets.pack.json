@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/obj/Debug/net8.0/scopedcss/projectbundle/TourPlanner.bundle.scp.css",
+      "PackagePath": "staticwebassets/TourPlanner.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/Images/map-placeholder.png",
+      "PackagePath": "staticwebassets/Images/map-placeholder.png"
+    },
+    {
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.TourPlanner.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.TourPlanner.props",
+      "PackagePath": "build\\TourPlanner.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.TourPlanner.props",
+      "PackagePath": "buildMultiTargeting\\TourPlanner.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.TourPlanner.props",
+      "PackagePath": "buildTransitive\\TourPlanner.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

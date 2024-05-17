@@ -1,0 +1,33 @@
+@using TourPlanner.ViewModels.CustomViewModels
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<div class="custom-wrapper-input-pill ms-0">
+    <InputText id="tourLogComment" class="custom-text-input-pill" placeholder="How was your experience?" @bind-Value="_viewModel.CreateTourLogComment" />
+    <a class="custom-button-pill btn btn-outline-secondary" id="createTourLogLink" href="@_viewModel.CreateTourLogUrl">
+        <i class="bi bi-plus-circle"></i>
+        <span class="ms-2">Create Log</span>
+    </a>
+</div>
+
+@if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+{
+    <div class="alert alert-danger mt-2">@_viewModel.ErrorMessage</div>
+}
+
+@code {
+    [Parameter]
+    public string TourId { get; set; } = string.Empty;
+
+    private InputFieldToCreateTourLogViewModel _viewModel = null!;
+
+    protected override void OnInitialized()
+    {
+        _viewModel = new InputFieldToCreateTourLogViewModel(NavigationManager);
+
+        if (!string.IsNullOrEmpty(TourId))
+        {
+            _viewModel.TourId = TourId;
+        }
+    }
+}

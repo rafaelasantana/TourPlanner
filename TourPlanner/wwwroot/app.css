@@ -1,0 +1,140 @@
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a, .btn-link {
+    color: #006bb7;
+}
+
+.custom-form-button {
+    width: 100%;
+}
+
+.form-control {
+    border-radius: 1rem !important; 
+    padding-left: 0.8rem !important;
+}
+
+.btn.btn-outline-secondary,
+.btn.btn-outline-danger{
+    background-color: white !important;
+}
+
+.btn.btn-outline-secondary:hover{
+    background-color: #6c757d !important;
+}
+
+.btn.btn-outline-danger:hover{
+background-color: #dc3545 !important;
+}
+
+/* Base style for pills */
+.pill {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    color: black;
+    font-size: 0.875rem;
+    text-align: center;
+    white-space: nowrap;
+    width: 6rem;
+}
+
+/* Tour Log Difficulty and Rating pills */
+
+.pill-very-easy,
+.pill-great{
+    background-color: rgba(136, 250, 136, 0.68);
+}
+
+.pill-easy,
+.pill-good {
+    background-color: #caf1ca;
+}
+
+.pill-normal,
+.pill-ok {
+    background-color: rgb(226, 226, 226);
+
+}
+
+.pill-hard,
+.pill-bad {
+    background-color: #ffd29d;
+}
+
+.pill-very-hard,
+.pill-awful {
+    background-color: #ff9898;
+}
+
+.input-group-custom {
+    border-radius: 0.5rem; /* Adjust as needed */
+    overflow: hidden;
+}
+
+.input-group-custom .form-control {
+    border-top-left-radius: 0.5rem; /* Same value as parent */
+    border-bottom-left-radius: 0.5rem; /* Same value as parent */
+}
+
+.input-group-custom .btn {
+    border-top-right-radius: 0.5rem; /* Same value as parent */
+    border-bottom-right-radius: 0.5rem; /* Same value as parent */
+}
+
+
+/* Pill input group */
+
+.input-group-pill {
+    border-radius: 50rem;
+    overflow: hidden;
+    height: 3rem;
+}
+.input-group-pill .form-control {
+    border-radius: 50rem 0 0 50rem;
+    border-right: none;
+}
+.input-group-pill .btn {
+    border-radius: 0 50rem 50rem 0;
+}
+.input-group-pill .form-control:focus {
+    box-shadow: none;
+}
+
+
+
+.custom-wrapper-input-pill {
+    position: relative;
+    width: 100%;
+    padding-left: 0 !important;
+    margin-bottom: 1rem;
+}
+
+.custom-text-input-pill {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 1.7rem;
+    padding-left: 1rem;
+    height: 3.5rem;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.custom-button-pill {
+    position: absolute;
+    right: 0.7rem;
+    top: 0.5rem;
+    border: 0;
+    border-radius: 1.5rem !important;
+    height: 2.5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.custom-button-pill i,
+.custom-button-pill span {
+    margin: 0;
+}

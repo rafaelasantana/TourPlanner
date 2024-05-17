@@ -1,0 +1,70 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+<PageTitle>Home</PageTitle>
+
+
+<CustomBodyContainerMedium>
+    <CustomBodyWrapperRounded>
+        <div class="row justify-content-center">
+            <p class="fs-1 text-center">Welcome to Tour Planner</p>
+            <form action="" class=" col-12 mt-3">
+                <FormSingleTextInputAndButton PlaceholderText="Search in Tours and Logs..." SubmitButtonText="Search"></FormSingleTextInputAndButton>
+            </form>
+        </div>
+    </CustomBodyWrapperRounded>
+    <CustomBodyWrapperRounded>
+        <CustomSecondaryHeader Text="Quick Picks"/>
+        <div class="row ms-1 justify-content-between">
+            <div class="col-12 col-sm-4 mb-2">
+                <CustomQuickPickAnchor ButtonText="All Tours" Url="/tours" ButtonId="browseToursButton" IconClass="bi bi-list" />
+            </div>
+            <div class="col-12 col-sm-4 mb-2">
+                <CustomQuickPickAnchor ButtonText="Create Tour" Url="/tour/create" ButtonId="createTourButton" IconClass="bi bi-plus-circle"/>
+            </div>
+            <div class="col-12 col-sm-4 mb-2">
+                <CustomQuickPickAnchor ButtonText="Create Log" Url="/tour-log/create" ButtonId="createTourLogButton" IconClass="bi bi-plus-circle"/>
+            </div>
+
+        </div>
+    </CustomBodyWrapperRounded>
+    <CustomBodyWrapperRounded>
+        <div class="row ms-1">
+            <CustomSecondaryHeader Text="Beloved Tours"/>
+            <ul class="list-group" style="border-radius: 0.8rem">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    The Lovers in Vienna
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Budapest's Best Taverns
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    The Lovers in Vienna
+                </li>
+            </ul>
+        </div>
+    </CustomBodyWrapperRounded>
+    <CustomBodyWrapperRounded>
+        <div class="row ms-1">
+            <CustomSecondaryHeader Text="Latest Logs"/>
+            <div class="col-12 ps-0">
+                <CustomInputFieldToCreateTourLog />
+            </div>
+            <ul class="list-group" style="border-radius: 0.8rem">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    The best day ever!
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    My Dad's favorite tour
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Not suitable for kids or dogs!
+                </li>
+            </ul>
+        </div>
+    </CustomBodyWrapperRounded>
+
+
+</CustomBodyContainerMedium>

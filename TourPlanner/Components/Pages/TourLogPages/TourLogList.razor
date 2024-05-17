@@ -1,0 +1,103 @@
+@using TourPlanner.Services
+@using TourPlanner.ViewModels.TourLogViewModels
+@inject TourLogService TourLogService
+@inject TimeFormatService TimeFormatService
+@inject NavigationManager NavigationManager
+
+<CustomBodyWrapperRounded>
+    <div class="row ms-1">
+        <div class="row p-0">
+            <p class="fs-3 ps-3">Logs</p>
+        </div>
+        <div class="row p-0">
+            <div class="col-12 col-lg-6">
+                <EditForm Model="@_viewModel" OnValidSubmit="@_viewModel.HandleSearchComment" class="ps-0 mb-3">
+                    <FormSingleTextInputAndButton
+                        PlaceholderText="Search in logs"
+                        SubmitButtonText="Search"
+                        AriaLabel="Search"
+                        SubmitButtonId="tourLogSearch"
+                        IconClass="bi bi-search"
+                        BindInput="@_viewModel.SearchText" />
+                </EditForm>
+            </div>
+            <div class="col-12 col-lg-6">
+                <CustomInputFieldToCreateTourLog TourId="@_viewModel.TourId"/>
+            </div>
+        </div>
+        <RadzenDataGrid Data="@_viewModel.TourLogs" TItem="TourLogModel" ColumnWidth="auto" AllowColumnResize="true" class="responsive-table">
+            <Columns>
+                <RadzenDataGridColumn TItem="TourLogModel" Property="Comment" Title="Comment" />
+                <RadzenDataGridColumn TItem="TourLogModel" Property="Difficulty" Title="Difficulty">
+                    <Template Context="tourLog">
+                        <div class="rounded-pill pill @(GetDifficultyPillClass(tourLog.Difficulty))">@tourLog.Difficulty</div>
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TourLogModel" Property="TotalDistanceMeters" Title="Distance (Meters)">
+                    <Template Context="tourLog">
+                        <div class="hide-on-small">@tourLog.TotalDistanceMeters</div>
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TourLogModel" Property="FormattedTotalTime" Title="Total Time">
+                    <Template Context="tourLog">
+                        <div class="hide-on-small">@tourLog.FormattedTotalTime</div>
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TourLogModel" Property="RatingDescription" Title="Rating">
+                    <Template Context="tourLog">
+                        <div class=" rounded-pill pill @(GetRatingPillClass(tourLog.Rating))">@tourLog.RatingDescription</div>
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TourLogModel" Property="CreatedOn" Title="Created On">
+                    <Template Context="tourLog">
+                        <div class="hide-on-small">@tourLog.CreatedOn</div>
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TourLogModel" Title="Actions" Width="5rem">
+                    <Template Context="tourLog">
+                        <CustomEditButtonRoundedPill Url="@($"tour-log/edit/{tourLog.Id}")" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+        </RadzenDataGrid>
+    </div>
+</CustomBodyWrapperRounded>
+
+@code {
+    [Parameter]
+    public string? TourId { get; set; }
+
+    private TourLogListViewModel _viewModel = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _viewModel = new TourLogListViewModel(TourLogService, TimeFormatService, NavigationManager);
+        await _viewModel.InitializeAsync(TourId);
+    }
+
+    private string GetDifficultyPillClass(DifficultyModel difficulty)
+    {
+        return difficulty switch
+        {
+            DifficultyModel.VeryHard => "pill-very-hard",
+            DifficultyModel.Hard => "pill-hard",
+            DifficultyModel.Normal => "pill-normal",
+            DifficultyModel.Easy => "pill-easy",
+            DifficultyModel.VeryEasy => "pill-very-easy",
+            _ => ""
+        };
+    }
+
+    private string GetRatingPillClass(int rating)
+    {
+        return rating switch
+        {
+            1 => "pill-great",
+            2 => "pill-good",
+            3 => "pill-ok",
+            4 => "pill-bad",
+            5 => "pill-awful",
+            _ => ""
+        };
+    }
+}

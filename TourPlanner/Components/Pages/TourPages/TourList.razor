@@ -1,0 +1,51 @@
+@page "/tours"
+@using TourPlanner.Services
+@using TourPlanner.ViewModels.TourViewModels
+@inject TourService TourService
+@inject TimeFormatService TimeFormatService
+
+<PageTitle>Tours</PageTitle>
+
+<CustomBodyContainerWide>
+    <CustomBodyWrapperRounded>
+        <div class="row pe-0 ">
+            <div class="col">
+                <CustomPrimaryHeader Text="All Tours"></CustomPrimaryHeader>
+            </div>
+            <div class="col float-end text-end pe-1">
+                <a href="/tour/create" class="btn btn-outline-secondary rounded-pill" style="width: 8rem;">
+                    <i class="bi bi-plus-circle"></i>
+                    <span class="ms-1">Create</span>
+                </a>
+            </div>
+        </div>
+        @if (_viewModel != null)
+        {
+            <RadzenDataGrid Data="@_viewModel.Tours" TItem="TourModel" GridLines="DataGridGridLines.Vertical" ColumnWidth="auto" AllowColumnResize="true">
+                <Columns>
+                    <RadzenDataGridColumn TItem="TourModel" Property="Name" Title="Name" MinWidth="15rem" Frozen="true" FrozenPosition="FrozenColumnPosition.Left"/>
+                    <RadzenDataGridColumn TItem="TourModel" Property="Start" Title="Start" />
+                    <RadzenDataGridColumn TItem="TourModel" Property="End" Title="End" />
+                    <RadzenDataGridColumn TItem="TourModel" Property="TransportType" Title="Transport Type" Width="8rem"/>
+                    <RadzenDataGridColumn TItem="TourModel" Property="Popularity" Title="Popularity" Width="8rem"/>
+                    <RadzenDataGridColumn TItem="TourModel" Title="Actions" Frozen="true" FrozenPosition="FrozenColumnPosition.Right" Width="9rem">
+                        <Template Context="tour">
+                            <CustomDetailsButton Url="@($"tour/details/{tour.Id}")" />
+                            <CustomEditButtonRoundedPill Url="@($"tour/edit/{tour.Id}")"/>
+                        </Template>
+                    </RadzenDataGridColumn>
+                </Columns>
+            </RadzenDataGrid>
+        }
+    </CustomBodyWrapperRounded>
+</CustomBodyContainerWide>
+
+@code {
+    private TourListViewModel? _viewModel;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _viewModel = new TourListViewModel(TourService, TimeFormatService);
+        await _viewModel.InitializeAsync();
+    }
+}

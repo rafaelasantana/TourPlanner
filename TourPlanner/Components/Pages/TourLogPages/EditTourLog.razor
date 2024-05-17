@@ -1,0 +1,109 @@
+﻿@using TourPlanner.Services
+@using TourPlanner.ViewModels.TourLogViewModels
+@inject TourLogService TourLogService
+@inject TourService TourService
+@inject TimeFormatService TimeFormatService
+@inject NavigationManager NavigationManager
+@page "/tour-log/edit/{TourLogId}"
+
+@rendermode InteractiveServer
+
+<PageTitle>Edit Tour Log</PageTitle>
+
+<CustomBodyContainerNarrow>
+    <CustomBodyWrapperRounded>
+        <CustomPrimaryHeader Text="Edit Tour Log"/>
+        
+        @if (_viewModel.ShowConfirmation)
+        {
+        <FormConfirmationDialog Message="Are you sure you want to delete this tour log?" OnConfirm="_viewModel.HandleConfirmation" />
+        }
+        
+        <EditForm method="post" Model="@_viewModel" OnValidSubmit="@_viewModel.UpdateTourLogAsync" FormName="updateTourLog" Enhance>
+
+            <DataAnnotationsValidator/>
+            <div class="row">
+                <CustomWrapperLarge>
+                    <label for="tourLogTour" class="form-label">Tour</label>
+                    <InputText id="tourLogTour" class="form-control" @bind-Value="@_viewModel.TourName" disabled />
+                    <ValidationMessage For="() => _viewModel.TourId" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+                <CustomWrapperLarge>
+                    <label for="tourLogDifficulty" class="form-label">Difficulty</label>
+                    <InputSelect id="tourLogDifficulty" class="form-control" @bind-Value="_viewModel.Difficulty">
+                        @foreach (var difficultyLevel in Enum.GetValues(typeof(DifficultyModel)))
+                        {
+                            <option value="@difficultyLevel">@difficultyLevel</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="() => _viewModel.Difficulty" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+                <CustomWrapperLarge>
+                    <label for="tourLogTotalDistance" class="form-label">Total Distance (Meters)</label>
+                    <InputNumber id="tourLogTotalDistance" class="form-control" @bind-Value="_viewModel.TotalDistanceMeters"/>
+                    <ValidationMessage For="() => _viewModel.TotalDistanceMeters" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+                <CustomWrapperSmall>
+                    <label for="tourLogTotalTimeHours" class="form-label">Total Time - Hours</label>
+                    <InputNumber id="tourLogTotalTimeHours" class="form-control" @bind-Value="_viewModel.Hours" min="0" max="23"/>
+                    <ValidationMessage For="() => _viewModel.Hours" class="text-danger"></ValidationMessage>
+                </CustomWrapperSmall>
+
+                <CustomWrapperSmall>
+                    <label for="tourLogTotalTimeMinutes" class="form-label">Total Time - Minutes</label>
+                    <InputNumber id="tourLogTotalTimeMinutes" class="form-control" @bind-Value="_viewModel.Minutes" min="0" max="59"/>
+                    <ValidationMessage For="() => _viewModel.Minutes" class="text-danger"></ValidationMessage>
+                </CustomWrapperSmall>
+                <CustomWrapperLarge>
+                    <label for="tourLogRating" class="form-label">Rating</label>
+                    <InputSelect id="tourLogRating" class="form-control" @bind-Value="_viewModel.Rating">
+                        <option value="1">Great</option>
+                        <option value="2">Good</option>
+                        <option value="3">OK</option>
+                        <option value="4">Bad</option>
+                        <option value="5">Awful</option>
+                    </InputSelect>
+                    <ValidationMessage For="() => _viewModel.Rating" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+                <CustomWrapperLarge>
+                    <label for="tourLogComment" class="form-label">Comment</label>
+                    <InputTextArea id="tourLogComment" class="form-control" @bind-Value="_viewModel.Comment"/>
+                    <ValidationMessage For="() => _viewModel.Comment" class="text-danger"></ValidationMessage>
+                </CustomWrapperLarge>
+            </div>
+            <ValidationSummary class="text-danger"/>
+
+            @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+            {
+            <div class="alert alert-danger" role="alert">
+                @_viewModel.ErrorMessage
+            </div>
+            }
+
+            @if (!string.IsNullOrEmpty(_viewModel.SuccessMessage))
+            {
+                <div class="alert alert-success" role="alert">
+                    @_viewModel.SuccessMessage
+                </div>
+                <a class="btn btn-outline-secondary" href="/tour/details/@_viewModel.TourId">Return to Tour Details</a>
+            }
+
+            <FormSubmitAndDangerButtons SubmitButtonText="Apply Changes" DangerButtonText="Delete Tour Log" OnDangerButtonClick="@_viewModel.RequestConfirmation"/>
+        </EditForm>
+    </CustomBodyWrapperRounded>
+</CustomBodyContainerNarrow>
+
+
+@code {
+    [Parameter]
+    public string? TourLogId { get; set; }
+    
+    private EditTourLogViewModel _viewModel = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _viewModel = new EditTourLogViewModel(TourLogService, TourService,  TimeFormatService, NavigationManager);
+        await _viewModel.InitializeAsync(TourLogId);
+    }
+    
+}

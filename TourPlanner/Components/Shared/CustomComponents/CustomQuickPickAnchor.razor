@@ -1,0 +1,24 @@
+<a class="btn btn-outline-secondary d-flex align-items-center justify-content-center rounded-pill"
+   href="@Url"
+   id="@ButtonId"
+   style="width: 100% !important; height: 3rem;">
+    <i class="@IconClass"></i>
+    @if (!string.IsNullOrEmpty(ButtonText))
+    {
+        <span class="ms-2">@ButtonText</span>
+    }
+</a>
+
+@code {
+    [Parameter]
+    public string ButtonText { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Url { get; set; } = string.Empty;
+
+    [Parameter]
+    public string ButtonId { get; set; } = string.Empty;
+
+    [Parameter]
+    public string IconClass { get; set; } = "bi bi-info-circle"; // Default icon class
+}
