@@ -68,17 +68,14 @@ public class CreateTourViewModel(TourService tourService, NavigationManager navi
             End = End
         };
 
-        Console.WriteLine($"Sending Data: {JsonSerializer.Serialize(newTour)}");
         var (createdTour, errorMessage) = await tourService.CreateTourAsync(newTour);
 
         if (createdTour != null)
         {
-            Console.WriteLine("Tour created successfully. Tour ID: " + createdTour.Id);
             navigationManager.NavigateTo($"/tour/details/{createdTour.Id}");
         }
         else
         {
-            Console.WriteLine("Tour could not be created!");
             ErrorMessage = errorMessage;
         }
     }
