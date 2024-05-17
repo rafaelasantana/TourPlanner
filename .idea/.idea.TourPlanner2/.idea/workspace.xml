@@ -8,7 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5febf929-b7d6-4d6f-b38d-254bc41cb7e1" name="Changes" comment="All working">
+    <list default="true" id="5febf929-b7d6-4d6f-b38d-254bc41cb7e1" name="Changes" comment="cleaning">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TourPlanner2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TourPlanner2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/Components/Pages/TourLogPages/EditTourLog.razor" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/Components/Pages/TourLogPages/EditTourLog.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TourPlanner/ViewModels/TourViewModels/TourDetailsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/ViewModels/TourViewModels/TourDetailsViewModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +45,7 @@
     <setting file="file://$PROJECT_DIR$/TourPlanner/Components/_Imports.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TourPlanner/Models/IHttpClientWrapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TourPlanner/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/ViewModels/TourViewModels/TourDetailsViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/rafaelasantana/RiderProjects/TourPlannerFrontend/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/rafaelasantana/RiderProjects/TourPlannerFrontend/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
@@ -127,7 +130,7 @@
       <workItem from="1715877371372" duration="556000" />
       <workItem from="1715878131350" duration="3003000" />
       <workItem from="1715942412832" duration="216000" />
-      <workItem from="1715943147080" duration="10578000" />
+      <workItem from="1715943147080" duration="10990000" />
     </task>
     <task id="LOCAL-00001" summary="remove duplicate sln file">
       <option name="closed" value="true" />
@@ -177,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715955606953</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="cleaning">
+      <option name="closed" value="true" />
+      <created>1715955672762</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715955672762</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +215,7 @@
     <MESSAGE value="fixing edit tour issue" />
     <MESSAGE value="create and edit tour log working from tour details page" />
     <MESSAGE value="All working" />
-    <option name="LAST_COMMIT_MESSAGE" value="All working" />
+    <MESSAGE value="cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning" />
   </component>
 </project>

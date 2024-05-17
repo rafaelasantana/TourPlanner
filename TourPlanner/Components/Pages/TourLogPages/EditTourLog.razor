@@ -44,18 +44,12 @@
                     <ValidationMessage For="() => _viewModel.TotalDistanceMeters" class="text-danger"></ValidationMessage>
                 </CustomWrapperLarge>
                 <CustomWrapperSmall>
-                    <ViewModelRegion ViewModel="@_viewModel">
-                        <p>hours: @_viewModel.Hours</p>
-                    </ViewModelRegion>
                     <label for="tourLogTotalTimeHours" class="form-label">Total Time - Hours</label>
                     <InputNumber id="tourLogTotalTimeHours" class="form-control" @bind-Value="_viewModel.Hours" min="0" max="23"/>
                     <ValidationMessage For="() => _viewModel.Hours" class="text-danger"></ValidationMessage>
                 </CustomWrapperSmall>
 
                 <CustomWrapperSmall>
-                    <ViewModelRegion ViewModel="@_viewModel">
-                        <p>minutes: @_viewModel.Minutes</p>
-                    </ViewModelRegion>
                     <label for="tourLogTotalTimeMinutes" class="form-label">Total Time - Minutes</label>
                     <InputNumber id="tourLogTotalTimeMinutes" class="form-control" @bind-Value="_viewModel.Minutes" min="0" max="59"/>
                     <ValidationMessage For="() => _viewModel.Minutes" class="text-danger"></ValidationMessage>

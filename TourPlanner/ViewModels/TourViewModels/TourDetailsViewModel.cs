@@ -5,7 +5,7 @@ using TourPlanner.Services;
 
 namespace TourPlanner.ViewModels.TourViewModels;
 
-public partial class TourDetailsViewModel(TourService tourService, TimeFormatService timeFormatService, NavigationManager navigationManager) : ObservableObject
+public class TourDetailsViewModel(TourService tourService, TimeFormatService timeFormatService, NavigationManager navigationManager) : ObservableObject
 {
     public TimeFormatService TimeFormatService { get; } = timeFormatService;
     private TourModel _tour = new TourModel();
