@@ -40,6 +40,9 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
     {
         try
         {
+            // Serialize the request data to JSON
+            var requestData = JsonSerializer.Serialize(tourLogDto, new JsonSerializerOptions { WriteIndented = true });
+
             var response = await httpClientWrapper.PostAsJsonAsync($"tour-logs/{tourId}", tourLogDto);
             var responseContent = await response.Content.ReadAsStringAsync();
 
@@ -57,6 +60,7 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
             return (false, $"Exception when creating tour log: {ex.Message}");
         }
     }
+
 
     public async Task<(TourLogModel? tourLog, string? errorMessage)> GetTourLogByIdAsync(string tourLogId)
     {
