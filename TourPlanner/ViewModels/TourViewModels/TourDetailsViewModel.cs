@@ -49,7 +49,6 @@ public partial class TourDetailsViewModel(TourService tourService, TimeFormatSer
     
     private async Task LoadTourAsync(string? tourId)
     {
-        Console.WriteLine("In LoadTourAsync: " + tourId);
         var result = await tourService.GetTourByIdAsync(tourId);
         if (result.tour != null)
         {

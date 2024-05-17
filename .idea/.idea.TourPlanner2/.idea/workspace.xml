@@ -8,14 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5febf929-b7d6-4d6f-b38d-254bc41cb7e1" name="Changes" comment="create and edit tour log working from tour details page">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TourPlanner2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TourPlanner2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourPlanner/Services/TourLogService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/Services/TourLogService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourPlanner/bin/Debug/net8.0/TourPlanner.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/bin/Debug/net8.0/TourPlanner.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourPlanner/bin/Debug/net8.0/TourPlanner.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/bin/Debug/net8.0/TourPlanner.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.sourcelink.json" afterDir="false" />
+    <list default="true" id="5febf929-b7d6-4d6f-b38d-254bc41cb7e1" name="Changes" comment="All working">
+      <change beforePath="$PROJECT_DIR$/TourPlanner/ViewModels/TourViewModels/TourDetailsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/ViewModels/TourViewModels/TourDetailsViewModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +127,7 @@
       <workItem from="1715877371372" duration="556000" />
       <workItem from="1715878131350" duration="3003000" />
       <workItem from="1715942412832" duration="216000" />
-      <workItem from="1715943147080" duration="10527000" />
+      <workItem from="1715943147080" duration="10578000" />
     </task>
     <task id="LOCAL-00001" summary="remove duplicate sln file">
       <option name="closed" value="true" />
@@ -175,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715955213099</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="All working">
+      <option name="closed" value="true" />
+      <created>1715955606953</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715955606953</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +203,7 @@
     <MESSAGE value="adding tests for tour log creation viewmodel" />
     <MESSAGE value="fixing edit tour issue" />
     <MESSAGE value="create and edit tour log working from tour details page" />
-    <option name="LAST_COMMIT_MESSAGE" value="create and edit tour log working from tour details page" />
+    <MESSAGE value="All working" />
+    <option name="LAST_COMMIT_MESSAGE" value="All working" />
   </component>
 </project>
