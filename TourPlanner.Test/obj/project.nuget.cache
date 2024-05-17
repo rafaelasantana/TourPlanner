@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zs0W6/Ac5yHt9gaovDr40RYPARV5pkTU1IVKoZldXrXMfAkRxkwTd1cS9F0Y79ej7xRLhdjh2iP3QYxbK3xsqA==",
+  "dgSpecHash": "AuC3Z8hoaCa10puu7G+XDXcxJ5sZEpDGBKZ9HVN0+i/wiEzCilgHckFqgiBuS4aw4q386k5yphGPgUXKkiXh+Q==",
   "success": true,
-  "projectFilePath": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner.Test/TourPlanner.Test.csproj",
+  "projectFilePath": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner.Test/TourPlanner.Test.csproj",
   "expectedPackageFiles": [
     "/Users/rafaelasantana/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/rafaelasantana/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",

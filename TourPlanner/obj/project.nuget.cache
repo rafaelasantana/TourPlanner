@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BBpfF48fIcb8LgxgY30FyV401uFj/WLUPdEE6VYKDf4etGTX3HSYjhk1dpYf76//wdd8mD4hhzWClxs8KzUd2g==",
+  "dgSpecHash": "5i3RgQicAnzzs4PQTwwIxRd6SX71rGGB99EehervP3aIP7fLS9y9d7/xfhbYs3kqZdyVJz1s+AkEbGtXvkcbbQ==",
   "success": true,
-  "projectFilePath": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/TourPlanner.csproj",
+  "projectFilePath": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/TourPlanner.csproj",
   "expectedPackageFiles": [
     "/Users/rafaelasantana/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/rafaelasantana/.nuget/packages/dartsassbuilder/1.0.0/dartsassbuilder.1.0.0.nupkg.sha512",

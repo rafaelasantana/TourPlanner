@@ -9,143 +9,143 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TourPlanner
 build_property.RootNamespace = TourPlanner
-build_property.ProjectDir = /Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/
+build_property.ProjectDir = /Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner
+build_property.MSBuildProjectDirectory = /Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/App.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Pages/Home.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Pages/TourLogPages/CreateTourLog.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Pages/TourLogPages/CreateTourLog.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyTG9nUGFnZXMvQ3JlYXRlVG91ckxvZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Pages/TourLogPages/EditTourLog.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Pages/TourLogPages/EditTourLog.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyTG9nUGFnZXMvRWRpdFRvdXJMb2cucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Pages/TourLogPages/TourLogList.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Pages/TourLogPages/TourLogList.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyTG9nUGFnZXMvVG91ckxvZ0xpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Pages/TourPages/CreateTour.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Pages/TourPages/CreateTour.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyUGFnZXMvQ3JlYXRlVG91ci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Pages/TourPages/EditTour.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Pages/TourPages/EditTour.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyUGFnZXMvRWRpdFRvdXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Pages/TourPages/TourDetails.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Pages/TourPages/TourDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyUGFnZXMvVG91ckRldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Pages/TourPages/TourList.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Pages/TourPages/TourList.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyUGFnZXMvVG91ckxpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Routes.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomBodyContainerMedium.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomBodyContainerMedium.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21Cb2R5Q29udGFpbmVyTWVkaXVtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomBodyContainerNarrow.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomBodyContainerNarrow.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21Cb2R5Q29udGFpbmVyTmFycm93LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomBodyContainerWide.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomBodyContainerWide.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21Cb2R5Q29udGFpbmVyV2lkZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomBodyWrapperRounded.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomBodyWrapperRounded.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21Cb2R5V3JhcHBlclJvdW5kZWQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomDetailCard.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomDetailCard.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21EZXRhaWxDYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomDetailsButton.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomDetailsButton.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21EZXRhaWxzQnV0dG9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomEditButtonRoundedPill.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomEditButtonRoundedPill.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21FZGl0QnV0dG9uUm91bmRlZFBpbGwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomInputFieldToCreateTourLog.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomInputFieldToCreateTourLog.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21JbnB1dEZpZWxkVG9DcmVhdGVUb3VyTG9nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomListItemWithActionButton.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomListItemWithActionButton.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21MaXN0SXRlbVdpdGhBY3Rpb25CdXR0b24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomPrimaryHeader.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomPrimaryHeader.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21QcmltYXJ5SGVhZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomQuickPickAnchor.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomQuickPickAnchor.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21RdWlja1BpY2tBbmNob3IucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomSecondaryHeader.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomSecondaryHeader.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21TZWNvbmRhcnlIZWFkZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomWrapperLarge.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomWrapperLarge.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21XcmFwcGVyTGFyZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/CustomWrapperSmall.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/CustomWrapperSmall.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9DdXN0b21XcmFwcGVyU21hbGwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/CustomComponents/ViewModelRegion.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/CustomComponents/ViewModelRegion.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvQ3VzdG9tQ29tcG9uZW50cy9WaWV3TW9kZWxSZWdpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/DetailsComponents/DetailWrapper.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/DetailsComponents/DetailWrapper.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRGV0YWlsc0NvbXBvbmVudHMvRGV0YWlsV3JhcHBlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/FormComponents/FormConfirmationDialog.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/FormComponents/FormConfirmationDialog.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybUNvbmZpcm1hdGlvbkRpYWxvZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/FormComponents/FormSingleTextInputAndButton.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/FormComponents/FormSingleTextInputAndButton.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybVNpbmdsZVRleHRJbnB1dEFuZEJ1dHRvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/FormComponents/FormSubmitAndDangerButtons.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/FormComponents/FormSubmitAndDangerButtons.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybVN1Ym1pdEFuZERhbmdlckJ1dHRvbnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Shared/FormComponents/FormSubmitButtonSingle.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Shared/FormComponents/FormSubmitButtonSingle.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TaGFyZWQvRm9ybUNvbXBvbmVudHMvRm9ybVN1Ym1pdEJ1dHRvblNpbmdsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/_Imports.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9fSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Layout/MainLayout.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-q4aiyko9pg
 
-[/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/Components/Layout/NavMenu.razor]
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-ap1ot9e8iw

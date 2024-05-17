@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner.Test/TourPlanner.Test.csproj": {}
+    "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner.Test/TourPlanner.Test.csproj": {}
   },
   "projects": {
-    "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner.Test/TourPlanner.Test.csproj": {
+    "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner.Test/TourPlanner.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner.Test/TourPlanner.Test.csproj",
+        "projectUniqueName": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner.Test/TourPlanner.Test.csproj",
         "projectName": "TourPlanner.Test",
-        "projectPath": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner.Test/TourPlanner.Test.csproj",
+        "projectPath": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner.Test/TourPlanner.Test.csproj",
         "packagesPath": "/Users/rafaelasantana/.nuget/packages/",
-        "outputPath": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner.Test/obj/",
+        "outputPath": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner.Test/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rafaelasantana/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/TourPlanner.csproj": {
-                "projectPath": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/TourPlanner.csproj"
+              "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/TourPlanner.csproj": {
+                "projectPath": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/TourPlanner.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/TourPlanner.csproj": {
+    "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/TourPlanner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/TourPlanner.csproj",
+        "projectUniqueName": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/TourPlanner.csproj",
         "projectName": "TourPlanner",
-        "projectPath": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/TourPlanner.csproj",
+        "projectPath": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/TourPlanner.csproj",
         "packagesPath": "/Users/rafaelasantana/.nuget/packages/",
-        "outputPath": "/Users/rafaelasantana/RiderProjects/TourPlanner2/TourPlanner/obj/",
+        "outputPath": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rafaelasantana/.nuget/NuGet/NuGet.Config"
