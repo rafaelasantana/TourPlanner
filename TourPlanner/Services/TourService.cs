@@ -45,7 +45,7 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
                 }
                 return null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }

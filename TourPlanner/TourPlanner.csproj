@@ -22,14 +22,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="Components\.DS_Store" />
-      <Content Include="Components\Shared\.DS_Store" />
-      <Content Include="wwwroot\.DS_Store" />
+        <Content Include="Components\.DS_Store" />
+        <Content Include="Components\Shared\.DS_Store" />
+        <Content Include="wwwroot\.DS_Store" />
     </ItemGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="Pages\Home.razor" />
-      <_ContentIncludedByDefault Remove="Layout\MainLayout.razor" />
+        <_ContentIncludedByDefault Remove="Pages\Home.razor" />
+        <_ContentIncludedByDefault Remove="Layout\MainLayout.razor" />
     </ItemGroup>
 
 </Project>

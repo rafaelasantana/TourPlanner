@@ -29,11 +29,11 @@ public class TourLogModel
     // Extra for a descriptive rating based on the numerical value
     public string RatingDescription => Rating switch
     {
-        1 => "Great",
-        2 => "Good",
+        1 => "Awful",
+        2 => "Bad",
         3 => "OK",
-        4 => "Bad",
-        5 => "Awful",
+        4 => "Good",
+        5 => "Great",
         _ => "Unknown" // Default case if the rating is out of expected range
     };
     

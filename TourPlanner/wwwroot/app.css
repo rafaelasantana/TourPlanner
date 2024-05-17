@@ -44,28 +44,28 @@ background-color: #dc3545 !important;
 
 .pill-very-easy,
 .pill-great{
-    background-color: rgba(136, 250, 136, 0.68);
+    background-color: rgba(78, 177, 61, 0.68);
 }
 
 .pill-easy,
 .pill-good {
-    background-color: #caf1ca;
+    background-color: #8cff45;
 }
 
 .pill-normal,
 .pill-ok {
-    background-color: rgb(226, 226, 226);
+    background-color: rgb(255, 237, 57);
 
 }
 
 .pill-hard,
 .pill-bad {
-    background-color: #ffd29d;
+    background-color: #ffa939;
 }
 
 .pill-very-hard,
 .pill-awful {
-    background-color: #ff9898;
+    background-color: #ff664f;
 }
 
 .input-group-custom {

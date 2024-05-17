@@ -62,8 +62,14 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
     {
         try
         {
-            var response = await httpClientWrapper.GetAsync($"tour-logs/{tourLogId}");
+            var url = $"tour-logs/{tourLogId}";
+            Console.WriteLine($"GET {url}");
+
+            var response = await httpClientWrapper.GetAsync(url);
             var responseBody = await response.Content.ReadAsStringAsync();
+
+            Console.WriteLine($"Response Status: {response.StatusCode}");
+            Console.WriteLine($"Response Body: {responseBody}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -76,6 +82,7 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"Exception when fetching tour log by ID: {ex.Message}");
             return (null, $"Exception when fetching tour log by ID: {ex.Message}");
         }
     }
@@ -93,7 +100,7 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
             }
 
             var errorData = JsonSerializer.Deserialize<ApiErrorResponse>(responseContent);
-            string errorMessage = errorData?.Error?.Message ?? "An error occurred while updating the tour log.";
+            var errorMessage = errorData?.Error?.Message ?? "An error occurred while updating the tour log.";
             return (false, errorMessage);
         }
         catch (Exception ex)
@@ -101,6 +108,8 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
             return (false, $"Exception when updating tour log: {ex.Message}");
         }
     }
+
+
 
     public async Task<(bool isSuccess, string? errorMessage)> DeleteTourLogAsync(string tourLogId)
     {

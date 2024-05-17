@@ -28,7 +28,7 @@
                     <RadzenDataGridColumn TItem="TourModel" Property="End" Title="End" />
                     <RadzenDataGridColumn TItem="TourModel" Property="TransportType" Title="Transport Type" Width="8rem"/>
                     <RadzenDataGridColumn TItem="TourModel" Property="Popularity" Title="Popularity" Width="8rem"/>
-                    <RadzenDataGridColumn TItem="TourModel" Title="Actions" Frozen="true" FrozenPosition="FrozenColumnPosition.Right" Width="9rem">
+                    <RadzenDataGridColumn TItem="TourModel" Title="Actions" Frozen="true" FrozenPosition="FrozenColumnPosition.Right" Width="8rem">
                         <Template Context="tour">
                             <CustomDetailsButton Url="@($"tour/details/{tour.Id}")" />
                             <CustomEditButtonRoundedPill Url="@($"tour/edit/{tour.Id}")"/>

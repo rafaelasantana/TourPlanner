@@ -10,7 +10,7 @@
             <p class="fs-3 ps-3">Logs</p>
         </div>
         <div class="row p-0">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 pe-0">
                 <EditForm Model="@_viewModel" OnValidSubmit="@_viewModel.HandleSearchComment" class="ps-0 mb-3">
                     <FormSingleTextInputAndButton
                         PlaceholderText="Search in logs"
@@ -21,34 +21,34 @@
                         BindInput="@_viewModel.SearchText" />
                 </EditForm>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 pe-0">
                 <CustomInputFieldToCreateTourLog TourId="@_viewModel.TourId"/>
             </div>
         </div>
         <RadzenDataGrid Data="@_viewModel.TourLogs" TItem="TourLogModel" ColumnWidth="auto" AllowColumnResize="true" class="responsive-table">
             <Columns>
                 <RadzenDataGridColumn TItem="TourLogModel" Property="Comment" Title="Comment" />
-                <RadzenDataGridColumn TItem="TourLogModel" Property="Difficulty" Title="Difficulty">
+                <RadzenDataGridColumn TItem="TourLogModel" Property="Difficulty" Title="Difficulty" Width="10rem">
                     <Template Context="tourLog">
                         <div class="rounded-pill pill @(GetDifficultyPillClass(tourLog.Difficulty))">@tourLog.Difficulty</div>
                     </Template>
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="TourLogModel" Property="TotalDistanceMeters" Title="Distance (Meters)">
+                <RadzenDataGridColumn TItem="TourLogModel" Property="TotalDistanceMeters" Title="Distance (Meters)" Width="10rem">
                     <Template Context="tourLog">
                         <div class="hide-on-small">@tourLog.TotalDistanceMeters</div>
                     </Template>
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="TourLogModel" Property="FormattedTotalTime" Title="Total Time">
+                <RadzenDataGridColumn TItem="TourLogModel" Property="FormattedTotalTime" Title="Total Time" Width="11rem">
                     <Template Context="tourLog">
                         <div class="hide-on-small">@tourLog.FormattedTotalTime</div>
                     </Template>
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="TourLogModel" Property="RatingDescription" Title="Rating">
+                <RadzenDataGridColumn TItem="TourLogModel" Property="RatingDescription" Title="Rating" Width="10rem">
                     <Template Context="tourLog">
                         <div class=" rounded-pill pill @(GetRatingPillClass(tourLog.Rating))">@tourLog.RatingDescription</div>
                     </Template>
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="TourLogModel" Property="CreatedOn" Title="Created On">
+                <RadzenDataGridColumn TItem="TourLogModel" Property="CreatedOn" Title="Created On" Width="11rem">
                     <Template Context="tourLog">
                         <div class="hide-on-small">@tourLog.CreatedOn</div>
                     </Template>
@@ -92,11 +92,11 @@
     {
         return rating switch
         {
-            1 => "pill-great",
-            2 => "pill-good",
+            1 => "pill-awful",
+            2 => "pill-bad",
             3 => "pill-ok",
-            4 => "pill-bad",
-            5 => "pill-awful",
+            4 => "pill-good",
+            5 => "pill-great",
             _ => ""
         };
     }

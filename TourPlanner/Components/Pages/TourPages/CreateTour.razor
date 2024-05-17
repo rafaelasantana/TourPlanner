@@ -16,9 +16,9 @@
             <div class="row">
                 
                 <CustomWrapperLarge>
-                    @*<ViewModelRegion ViewModel="@_viewModel">
+                    <ViewModelRegion ViewModel="@_viewModel">
                         <p>Name: @_viewModel.Name</p>
-                    </ViewModelRegion>*@
+                    </ViewModelRegion>
                     <label for="tourName" class="form-label">Name</label>
                     <InputText id="tourName" class="form-control" @bind-Value="_viewModel.Name"/>
                     <ValidationMessage For="() => _viewModel.Name" class="text-danger"></ValidationMessage>

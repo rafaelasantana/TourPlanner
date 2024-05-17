@@ -6,11 +6,11 @@ namespace TourPlanner.Models.TourLogModels;
 
 public enum DifficultyModel
 {
-    VeryHard = 100,
-    Hard = 200,
+    VeryEasy = 100,
+    Easy = 200,
     Normal = 300,
-    Easy = 400,
-    VeryEasy = 500
+    Hard = 400,
+    VeryHard = 500
 }
 
 public class DifficultyModelConverter : JsonConverter<DifficultyModel>

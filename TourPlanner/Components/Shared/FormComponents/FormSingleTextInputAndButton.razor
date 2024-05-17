@@ -1,34 +1,3 @@
-@*<div class="input-group input-group-pill">
-    <input type="text" class="form-control" placeholder="  @PlaceholderText" aria-label="@AriaLabel" @bind-value="@BindInput">
-    <button class="btn btn-outline-secondary" type="submit" id="@SubmitButtonId">
-        <i class="@IconClass"></i>
-        <span class="ms-1">@SubmitButtonText</span>
-    </button>
-</div>
-
-@code {
-    [Parameter]
-    public string? PlaceholderText { get; set; }
-
-    [Parameter]
-    public string? SubmitButtonText { get; set; }
-
-    [Parameter]
-    public string? AriaLabel { get; set; }
-
-    [Parameter]
-    public string SubmitButtonId { get; set; } = "submitButton";
-    
-    [Parameter]
-    public string? BindInput { get; set; }
-
-    [Parameter]
-    public EventCallback<string> InputValueChanged { get; set; }
-
-    [Parameter]
-    public string IconClass { get; set; } = "bi bi-search"; // Default icon class
-}*@
-
 <div class="custom-wrapper-input-pill ms-0 mb-0">
     <input type="text" class="custom-text-input-pill" placeholder="@PlaceholderText" aria-label="@AriaLabel" @bind-value="@BindInput">
     <button class="custom-button-pill btn btn-outline-secondary" type="submit" id="@SubmitButtonId">

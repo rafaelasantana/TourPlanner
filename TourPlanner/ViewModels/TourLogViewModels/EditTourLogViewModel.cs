@@ -119,7 +119,7 @@ public class EditTourLogViewModel(TourLogService tourLogService, TourService tou
 
     private void UpdateTotalTime()
     {
-        _totalTime = TimeFormatService.FormatIso8601Duration(Hours, Minutes);
+        _totalTime = TimeFormatService.FormatStandardDuration(Hours, Minutes);
         OnPropertyChanged(nameof(TotalTime));
     }
 
@@ -176,7 +176,9 @@ public class EditTourLogViewModel(TourLogService tourLogService, TourService tou
                 TotalDistanceMeters = tourLog.TotalDistanceMeters;
                 Rating = tourLog.Rating;
 
-                // Parse ISO 8601 duration format
+                Console.WriteLine($"Total time in viewmodel: ", tourLog.TotalTime);
+
+                // Parse standard duration format
                 var (hours, minutes) = TimeFormatService.ParseIso8601DurationToTuple(tourLog.TotalTime);
                 Hours = hours;
                 Minutes = minutes;
