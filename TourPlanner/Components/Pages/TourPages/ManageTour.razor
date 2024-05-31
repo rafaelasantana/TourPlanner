@@ -1,0 +1,254 @@
+@*
+@#1#page "/tour/manage"
+@using TourPlanner.Services
+@using TourPlanner.ViewModels.TourViewModels
+@inject TourService TourService
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Manage Tours</PageTitle>
+
+<CustomBodyContainerMedium>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <CustomBodyWrapperRounded>
+                <CustomPrimaryHeader Text="Import"/>
+                <EditForm method="post" Model="@_viewModel" OnValidSubmit="@_viewModel.ImportTour" FormName="importTour" Enhance>
+                    <DataAnnotationsValidator/>
+
+                    <CustomWrapperLarge>
+                        <label for="importFile" class="form-label">Select a file to import</label>
+                        <InputFile id="importFile" />
+                        $2$<ValidationMessage For="() => _viewModel.ImportFile" class="text-danger" />#2#
+                    </CustomWrapperLarge>
+
+                    <ValidationSummary class="text-danger"/>
+
+                    @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+                    {
+                    <div class="alert alert-danger" role="alert">
+                        @_viewModel.ErrorMessage
+                    </div>
+                    }
+
+                    <FormSubmitButtonSingle ButtonText="Export Tour"/>
+                </EditForm>
+            </CustomBodyWrapperRounded>
+        </div>
+        <div class="col-12 col-md-6">
+            <CustomBodyWrapperRounded>
+                <CustomPrimaryHeader Text="Export"/>
+                <EditForm method="post" Model="@_viewModel" OnValidSubmit="@_viewModel.ExportTour" FormName="exportTour" Enhance>
+                    <DataAnnotationsValidator/>
+
+                    <CustomWrapperLarge>
+                        <ViewModelRegion ViewModel="@_viewModel">
+                            <p>Name: @_viewModel.SelectedTourId</p>
+                        </ViewModelRegion>
+                        <label for="exportTourId" class="form-label">Select a Tour</label>
+                        <InputSelect id="exportTourId" class="form-control" @bind-Value="_viewModel.SelectedTourId">
+                            @foreach (var tour in _viewModel.Tours)
+                            {
+                                <option value="@tour.Id">@tour.Name</option>
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="() => _viewModel" class="text-danger"></ValidationMessage>
+                    </CustomWrapperLarge>
+
+                    <ValidationSummary class="text-danger"/>
+
+                    @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @_viewModel.ErrorMessage
+                        </div>
+                    }
+                    <FormSubmitButtonSingle ButtonText="Export Tour"/>
+                </EditForm>
+            </CustomBodyWrapperRounded>
+        </div>
+
+    </div>
+
+</CustomBodyContainerMedium>
+
+
+@code {
+    private ManageTourViewModel _viewModel = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _viewModel = new ManageTourViewModel(TourService, NavigationManager);
+        await _viewModel.InitializeAsync();
+    }
+}#1#
+
+@page "/tour/manage"
+@using TourPlanner.Services
+@using TourPlanner.ViewModels.TourViewModels
+@inject TourService TourService
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Manage Tours</PageTitle>
+
+<CustomBodyContainerMedium>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <CustomBodyWrapperRounded>
+                <CustomPrimaryHeader Text="Import"/>
+                <EditForm method="post" Model="@_viewModel" OnValidSubmit="@_viewModel.ImportTour" FormName="importTour" Enhance>
+                    <DataAnnotationsValidator/>
+
+                    <CustomWrapperLarge>
+                        <label for="importFile" class="form-label">Select a file to import</label>
+                        <InputFile id="importFile" />
+                        $1$<ValidationMessage For="() => _viewModel.ImportFile" class="text-danger" />#1#
+                    </CustomWrapperLarge>
+
+                    <ValidationSummary class="text-danger"/>
+
+                    @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @_viewModel.ErrorMessage
+                        </div>
+                    }
+
+                    <FormSubmitButtonSingle ButtonText="Import Tour"/>
+                </EditForm>
+            </CustomBodyWrapperRounded>
+        </div>
+        <div class="col-12 col-md-6">
+            <CustomBodyWrapperRounded>
+                <CustomPrimaryHeader Text="Export"/>
+                <EditForm method="post" Model="@_viewModel" OnValidSubmit="@_viewModel.ExportTour" FormName="exportTour" Enhance>
+                    <DataAnnotationsValidator/>
+
+                    <CustomWrapperLarge>
+                        <ViewModelRegion ViewModel="@_viewModel">
+                            <p>Name: @_viewModel.SelectedTourId</p>
+                        </ViewModelRegion>
+                        <label for="exportTourId" class="form-label">Select a Tour</label>
+                        <InputSelect id="exportTourId" class="form-control" @bind-Value="_viewModel.SelectedTourId">
+                            @foreach (var tour in _viewModel.Tours)
+                            {
+                                <option value="@tour.Id">@tour.Name</option>
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="() => _viewModel.SelectedTourId" class="text-danger"></ValidationMessage>
+                    </CustomWrapperLarge>
+
+                    <ValidationSummary class="text-danger"/>
+
+                    @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @_viewModel.ErrorMessage
+                        </div>
+                    }
+                    <FormSubmitButtonSingle ButtonText="Export Tour"/>
+                </EditForm>
+            </CustomBodyWrapperRounded>
+        </div>
+
+    </div>
+
+</CustomBodyContainerMedium>
+
+@code {
+    private ManageTourViewModel _viewModel = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _viewModel = new ManageTourViewModel(TourService, NavigationManager);
+        await _viewModel.InitializeAsync();
+    }
+}
+*@
+
+
+@page "/tour/manage"
+@using TourPlanner.Services
+@using TourPlanner.ViewModels.TourViewModels
+@inject TourService TourService
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Manage Tours</PageTitle>
+
+<CustomBodyContainerMedium>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <CustomBodyWrapperRounded>
+                <CustomPrimaryHeader Text="Import"/>
+                <EditForm method="post" Model="@_viewModel" OnValidSubmit="@_viewModel.ImportTour" FormName="importTour" Enhance>
+                    <DataAnnotationsValidator/>
+
+                    <CustomWrapperLarge>
+                        <label for="importFile" class="form-label">Select a file to import</label>
+                        <InputFile id="importFile" />
+                        @*<ValidationMessage For="() => _viewModel.ImportFile" class="text-danger" />*@
+                    </CustomWrapperLarge>
+
+                    <ValidationSummary class="text-danger"/>
+
+                    @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @_viewModel.ErrorMessage
+                        </div>
+                    }
+
+                    <FormSubmitButtonSingle ButtonText="Import Tour"/>
+                </EditForm>
+            </CustomBodyWrapperRounded>
+        </div>
+        <div class="col-12 col-md-6">
+            <CustomBodyWrapperRounded>
+                <CustomPrimaryHeader Text="Export"/>
+                <EditForm method="post" Model="@_viewModel" OnValidSubmit="@_viewModel.ExportTour" FormName="exportTour" Enhance>
+                    <DataAnnotationsValidator/>
+
+                    <CustomWrapperLarge>
+                        <ViewModelRegion ViewModel="@_viewModel">
+                            <p>Name: @_viewModel.SelectedTourId</p>
+                        </ViewModelRegion>
+                        <label for="exportTourId" class="form-label">Select a Tour</label>
+                        <InputSelect id="exportTourId" class="form-control" @bind-Value="_viewModel.SelectedTourId">
+                            @foreach (var tour in _viewModel.Tours)
+                            {
+                                <option value="@tour.Id">@tour.Name</option>
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="() => _viewModel.SelectedTourId" class="text-danger"></ValidationMessage>
+                    </CustomWrapperLarge>
+
+                    <ValidationSummary class="text-danger"/>
+
+                    @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @_viewModel.ErrorMessage
+                        </div>
+                    }
+                    <FormSubmitButtonSingle ButtonText="Export Tour"/>
+                    @if (_viewModel.IsExportSuccessful)
+                    {
+                        <button @onclick="_viewModel.DownloadExportedTour" class="btn btn-primary mt-3">Download Tour</button>
+                    }
+                </EditForm>
+            </CustomBodyWrapperRounded>
+        </div>
+    </div>
+</CustomBodyContainerMedium>
+
+@code {
+    private ManageTourViewModel _viewModel = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _viewModel = new ManageTourViewModel(TourService, NavigationManager);
+        await _viewModel.InitializeAsync();
+    }
+}

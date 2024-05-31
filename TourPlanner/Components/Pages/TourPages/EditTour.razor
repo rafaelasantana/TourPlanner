@@ -1,7 +1,6 @@
 ﻿@page "/tour/edit/{TourId}"
 @using TourPlanner.Services
 @using TourPlanner.ViewModels.TourViewModels
-@using TourPlanner.Components.Shared
 @inject TourService TourService
 @inject NavigationManager NavigationManager
 
@@ -53,10 +52,6 @@
                 </CustomWrapperSmall>
 
                 <CustomWrapperLarge>
-                    <ViewModelRegion ViewModel="@_viewModel">
-                        <p>Description: @_viewModel.Description</p>
-                    </ViewModelRegion>
-                    
                     <label for="tourDescription" class="form-label">Description</label>
                     <InputTextArea id="tourDescription" class="form-control" @bind-Value="_viewModel.Description"/>
                     <ValidationMessage For="() => _viewModel.Description" class="text-danger"></ValidationMessage>

@@ -8,10 +8,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5febf929-b7d6-4d6f-b38d-254bc41cb7e1" name="Changes" comment="cleaning">
+    <list default="true" id="5febf929-b7d6-4d6f-b38d-254bc41cb7e1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TourPlanner2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TourPlanner2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourPlanner/Components/Pages/TourLogPages/EditTourLog.razor" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/Components/Pages/TourLogPages/EditTourLog.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TourPlanner/ViewModels/TourViewModels/TourDetailsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/ViewModels/TourViewModels/TourDetailsViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/bin/Debug/net8.0/TourPlanner.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/bin/Debug/net8.0/TourPlanner.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/bin/Debug/net8.0/TourPlanner.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/bin/Debug/net8.0/TourPlanner.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/TourPlanner.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/ref/TourPlanner.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/ref/TourPlanner.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/refint/TourPlanner.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/Debug/net8.0/refint/TourPlanner.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/TourPlanner.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/TourPlanner.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourPlanner/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/TourPlanner/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +51,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/999c2d2d64344a75b952fe5808897e75c28a00/b7/d923d4b2/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TourPlanner/Components/App.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Pages/TourPages/CreateTour.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TourPlanner/Components/_Imports.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TourPlanner/Models/IHttpClientWrapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TourPlanner/Program.cs" root0="FORCE_HIGHLIGHTING" />
@@ -62,30 +72,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.TourPlanner: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.TourPlanner: https.executor&quot;: &quot;Debug&quot;,
-    &quot;Attach to Process.1647:dotnet.executor&quot;: &quot;Debug&quot;,
-    &quot;Attach to Process.2411:dotnet.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.4317549&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.TourPlanner: http.executor": "Run",
+    ".NET Launch Settings Profile.TourPlanner: https.executor": "Debug",
+    "Attach to Process.1647:dotnet.executor": "Debug",
+    "Attach to Process.2411:dotnet.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "XThreadsFramesViewSplitterKey": "0.35796767",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/rafaelasantana/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/rafaelasantana/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache&quot;,
-      &quot;/Users/rafaelasantana/Library/Application Support/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/rafaelasantana/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
+      "/Users/rafaelasantana/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache",
+      "/Users/rafaelasantana/Library/Application Support/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.TourPlanner: http">
     <configuration name="TourPlanner: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/TourPlanner/TourPlanner.csproj" />
@@ -130,7 +140,7 @@
       <workItem from="1715877371372" duration="556000" />
       <workItem from="1715878131350" duration="3003000" />
       <workItem from="1715942412832" duration="216000" />
-      <workItem from="1715943147080" duration="10990000" />
+      <workItem from="1715943147080" duration="11316000" />
     </task>
     <task id="LOCAL-00001" summary="remove duplicate sln file">
       <option name="closed" value="true" />
@@ -188,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715955672762</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="cleaning">
+      <option name="closed" value="true" />
+      <created>1715956097439</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715956097439</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

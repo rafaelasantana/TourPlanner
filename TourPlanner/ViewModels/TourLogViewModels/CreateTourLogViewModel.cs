@@ -9,7 +9,6 @@ namespace TourPlanner.ViewModels.TourLogViewModels;
 
 public class CreateTourLogViewModel(TourLogService tourLogService, TourService tourService, NavigationManager navigationManager) : ObservableObject
 {
-    private TourModel _selectedTour = new TourModel();
     private string _selectedTourId = string.Empty;
     private List<TourModel> _tours = [];
     private string _comment = string.Empty;
@@ -21,6 +20,7 @@ public class CreateTourLogViewModel(TourLogService tourLogService, TourService t
     private int _rating;
     private string? _errorMessage = string.Empty;
     
+    [Required(ErrorMessage = "Tour is required.")]
     public string SelectedTourId
     {
         get => _selectedTourId;
@@ -30,14 +30,7 @@ public class CreateTourLogViewModel(TourLogService tourLogService, TourService t
     public List<TourModel> Tours
     {
         get => _tours;
-        set => SetProperty(ref _tours, value);
-    }
-    
-    [Required(ErrorMessage = "Tour is required.")]
-    public TourModel SelectedTour
-    {
-        get => _selectedTour;
-        set => SetProperty(ref _selectedTour, value);
+        private set => SetProperty(ref _tours, value);
     }
     
     [Required(ErrorMessage = "Comment is required.")]

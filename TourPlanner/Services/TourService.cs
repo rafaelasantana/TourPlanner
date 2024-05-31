@@ -115,6 +115,41 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
                 return (false, $"Exception when deleting tour: {ex.Message}");
             }
         }
+        
+        public async Task<(bool isSuccess, byte[]? fileContent, string? errorMessage)> ExportTourAsync(List<string> tourIds, bool withTourLogs, string format)
+        {
+            if (tourIds == null || !tourIds.Any())
+            {
+                throw new ArgumentException("tourIds cannot be null or empty.", nameof(tourIds));
+            }
+
+            if (string.IsNullOrEmpty(format))
+            {
+                throw new ArgumentException("Format is required.", nameof(format));
+            }
+
+            try
+            {
+                var requestUri = $"tours/export?withTourLogs={withTourLogs}&format={format}";
+                var response = await httpClientWrapper.PostAsJsonAsync(requestUri, tourIds);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var fileContent = await response.Content.ReadAsByteArrayAsync();
+                    return (true, fileContent, null);
+                }
+
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var errorData = JsonSerializer.Deserialize<ApiErrorResponse>(errorContent);
+                return (false, null, errorData?.Error?.Message ?? "An error occurred during export.");
+            }
+            catch (Exception ex)
+            {
+                return (false, null, $"Exception when calling API: {ex.Message}");
+            }
+        }
+
+
 }
 public class ApiErrorResponse
 {
