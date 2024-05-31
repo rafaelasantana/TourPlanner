@@ -67,13 +67,8 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
         try
         {
             var url = $"tour-logs/{tourLogId}";
-            Console.WriteLine($"GET {url}");
-
             var response = await httpClientWrapper.GetAsync(url);
             var responseBody = await response.Content.ReadAsStringAsync();
-
-            Console.WriteLine($"Response Status: {response.StatusCode}");
-            Console.WriteLine($"Response Body: {responseBody}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -86,7 +81,6 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Exception when fetching tour log by ID: {ex.Message}");
             return (null, $"Exception when fetching tour log by ID: {ex.Message}");
         }
     }

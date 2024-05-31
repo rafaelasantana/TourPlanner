@@ -4,13 +4,23 @@ using TourPlanner.Models.TourModels;
 using TourPlanner.Services;
 
 namespace TourPlanner.ViewModels.TourViewModels;
-public class ManageTourViewModel(TourService tourService, NavigationManager navigationManager)
-    : ObservableObject
+
+public class ExportTourViewModel : ObservableObject
 {
+    private readonly TourService _tourService;
+    private readonly NavigationManager _navigationManager;
+
+    public ExportTourViewModel(TourService tourService, NavigationManager navigationManager)
+    {
+        _tourService = tourService;
+        _navigationManager = navigationManager;
+    }
+
     private string _selectedTourId = string.Empty;
-    private List<TourModel> _tours = [];
-    private string? _errorMessage = string.Empty;
+    private List<TourModel> _tours = new();
+    private string? _errorMessage;
     private bool _isExportSuccessful;
+    public bool IncludeTourLogs = true;
     private byte[]? _exportedFileContent;
 
     [Required(ErrorMessage = "Tour is required.")]
@@ -25,7 +35,7 @@ public class ManageTourViewModel(TourService tourService, NavigationManager navi
         get => _tours;
         set => SetProperty(ref _tours, value);
     }
-    
+
     public string? ErrorMessage
     {
         get => _errorMessage;
@@ -51,18 +61,13 @@ public class ManageTourViewModel(TourService tourService, NavigationManager navi
 
     private async Task LoadToursAsync()
     {
-        var tours = await tourService.GetAllToursAsync();
+        var tours = await _tourService.GetAllToursAsync();
         if (tours != null)
         {
             Tours = tours;
         }
     }
-    
-    public Task ImportTour()
-    {
-        return Task.CompletedTask;
-    }
-    
+
     public async Task ExportTour()
     {
         if (string.IsNullOrEmpty(SelectedTourId))
@@ -74,12 +79,16 @@ public class ManageTourViewModel(TourService tourService, NavigationManager navi
         try
         {
             var tourIds = new List<string> { SelectedTourId };
-            var result = await tourService.ExportTourAsync(tourIds, true, "xlsx");
+            var result = await _tourService.ExportTourAsync(tourIds, IncludeTourLogs, "xlsx");
             if (result.isSuccess && result.fileContent != null)
             {
                 ErrorMessage = null;
                 ExportedFileContent = result.fileContent;
                 IsExportSuccessful = true;
+
+                var base64 = Convert.ToBase64String(ExportedFileContent);
+                var downloadLink = $"data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{base64}";
+                _navigationManager.NavigateTo(downloadLink, true);
             }
             else
             {
@@ -99,6 +108,6 @@ public class ManageTourViewModel(TourService tourService, NavigationManager navi
         if (ExportedFileContent == null) return;
         var base64 = Convert.ToBase64String(ExportedFileContent);
         var downloadLink = $"data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{base64}";
-        navigationManager.NavigateTo(downloadLink, true);
+        _navigationManager.NavigateTo(downloadLink, true);
     }
 }

@@ -175,9 +175,7 @@ public class EditTourLogViewModel(TourLogService tourLogService, TourService tou
                 Difficulty = tourLog.Difficulty;
                 TotalDistanceMeters = tourLog.TotalDistanceMeters;
                 Rating = tourLog.Rating;
-
-                Console.WriteLine($"Total time in viewmodel: ", tourLog.TotalTime);
-
+                
                 // Parse standard duration format
                 var (hours, minutes) = TimeFormatService.ParseIso8601DurationToTuple(tourLog.TotalTime);
                 Hours = hours;

@@ -1,11 +1,17 @@
 ﻿<div class="d-flex justify-content-center">
-    <button type="submit" class="btn btn-primary my-3 custom-form-button rounded-pill">
-        <i class="bi-check-circle"></i>
+    <button type="submit" class="btn @ButtonClass my-3 custom-form-button rounded-pill">
+        <i class="@IconClass"></i>
         <span class="ms-2">@ButtonText</span>
     </button>
 </div>
 
 @code {
-    [Parameter]
-    public string ButtonText { get; set; } = "Submit"; // Default text
+[Parameter]
+public string ButtonText { get; set; } = "Submit"; // Default text
+
+[Parameter]
+public string IconClass { get; set; } = "bi-check-circle"; // Default icon class
+
+[Parameter]
+public string ButtonClass { get; set; } = "btn-primary"; // Default button class
 }

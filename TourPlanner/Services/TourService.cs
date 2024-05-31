@@ -148,8 +148,37 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
                 return (false, null, $"Exception when calling API: {ex.Message}");
             }
         }
+        
+        public async Task<(bool isSuccess, string? errorMessage)> ImportTourAsync(Stream fileStream, string format)
+        {
+            try
+            {
+                using var content = new MultipartFormDataContent();
+                var fileContent = new StreamContent(fileStream);
+                fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+                content.Add(fileContent, "SubmittedFile", "import.xlsx");
 
+                var requestUri = $"tours/import?format={format}";
+                var response = await httpClientWrapper.PostAsync(requestUri, content);
 
+                if (response.IsSuccessStatusCode)
+                {
+                    return (true, null);
+                }
+                else
+                {
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    var errorData = JsonSerializer.Deserialize<ApiErrorResponse>(errorContent);
+                    return (false, errorData?.Error?.Message ?? "An error occurred during import.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return (false, $"Exception when calling API: {ex.Message}");
+            }
+        }
+
+    
 }
 public class ApiErrorResponse
 {
