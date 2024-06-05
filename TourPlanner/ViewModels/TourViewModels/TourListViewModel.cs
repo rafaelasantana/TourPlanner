@@ -8,9 +8,7 @@ namespace TourPlanner.ViewModels.TourViewModels;
 public class TourListViewModel(TourService tourService, TimeFormatService timeFormatService, NavigationManager navigationManager)
     : ObservableObject
 {
-    public TimeFormatService TimeFormatService { get; } = timeFormatService;
     private string? _errorMessage;
-    private string _popularityFormatted = string.Empty;
 
     public ObservableCollection<TourModel> Tours { get; private set; } = [];
 
@@ -19,16 +17,11 @@ public class TourListViewModel(TourService tourService, TimeFormatService timeFo
         get => _errorMessage;
         set => SetProperty(ref _errorMessage, value);
     }
-    
-    public string PopularityFormatted
-    {
-        get => _popularityFormatted;
-        set => SetProperty(ref _popularityFormatted, value);
-    }
+
     public async Task InitializeAsync()
     {
         await GetAllToursAsync();
-    }
+    } 
     
     private async Task GetAllToursAsync()
     {

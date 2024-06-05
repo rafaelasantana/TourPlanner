@@ -71,7 +71,6 @@ public class TourDetailsViewModel(TourService tourService, TimeFormatService tim
             _estimatedTimeFormatted = TimeFormatService.ParseIso8601DurationToString(_tour.EstimatedTime);
             _popularityFormatted = _tour.Popularity?.ToString() ?? "No data yet";
             _childFriendlinessFormatted = _tour.ChildFriendliness ?? "No data yet";
-
         }
         else
         {

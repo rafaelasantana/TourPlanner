@@ -26,7 +26,7 @@
             <RadzenDataGrid Data="@_viewModel.Tours" TItem="TourModel" GridLines="DataGridGridLines.Vertical" ColumnWidth="auto" AllowColumnResize="true" AllowSorting="true" Style="border-radius: 1.5rem">
                 <Columns>
                     <RadzenDataGridColumn TItem="TourModel" Property="Name" Title="Name" MinWidth="15rem" Frozen="true" Sortable="true" FrozenPosition="FrozenColumnPosition.Left">
-                        <Template Context="tour" class="anchor-hover-effect">
+                        <Template Context="tour">
                             <div class="anchor-hover-effect" @onclick="() => _viewModel.NavigateToDetail(tour.Id)" style="cursor: pointer;">
                                 @tour.Name
                             </div>
