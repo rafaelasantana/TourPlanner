@@ -50,6 +50,8 @@ public class TourModel
     [JsonPropertyName("popularity")]
     public int? Popularity { get; set; }
     
+    public string? PopularityFormatted { get; set; }
+    
     [JsonPropertyName("childFriendliness")]
     public string? ChildFriendliness { get; set; }
     

@@ -10,12 +10,20 @@ public class TourListViewModel(TourService tourService, TimeFormatService timeFo
 {
     public TimeFormatService TimeFormatService { get; } = timeFormatService;
     private string? _errorMessage;
+    private string _popularityFormatted = string.Empty;
+
     public ObservableCollection<TourModel> Tours { get; private set; } = [];
 
     public string? ErrorMessage
     {
         get => _errorMessage;
         set => SetProperty(ref _errorMessage, value);
+    }
+    
+    public string PopularityFormatted
+    {
+        get => _popularityFormatted;
+        set => SetProperty(ref _popularityFormatted, value);
     }
     public async Task InitializeAsync()
     {
@@ -32,6 +40,7 @@ public class TourListViewModel(TourService tourService, TimeFormatService timeFo
             {
                 // Format the total time before adding to the observable collection
                 tour.FormattedEstimatedTime = TimeFormatService.ParseIso8601DurationToString(tour.EstimatedTime);
+                tour.PopularityFormatted = tour.Popularity?.ToString() ?? "No data yet";
                 Tours.Add(tour);
             }
         }
