@@ -44,8 +44,10 @@
             <ul class="list-group" style="border-radius: 0.8rem">
                 @foreach (var tour in _viewModel.BelovedTours)
                 {
-                <li class="list-group-item d-flex justify-content-between align-items-center anchor-hover-effect" >
-                    <a href="@($"tour/details/{tour.Id}")" class="anchor-hover-effect" style="cursor: pointer;">@tour.Name</a>
+                <li class="list-group-item d-flex justify-content-between align-items-center" >
+                    <div class="anchor-hover-effect" @onclick="() => _viewModel.NavigateToDetail(tour.Id)" style="cursor: pointer; width: 100%">
+                        @tour.Name
+                    </div>
                 </li>
                 }
             </ul>
@@ -61,9 +63,9 @@
                 @foreach (var log in _viewModel.LatestLogs)
                 {
                 <li class="list-group-item d-flex justify-content-between align-items-center anchor-hover-effect">
-                    <a href="@($"tour/details/{log.TourId}")" class="anchor-hover-effect" style="cursor: pointer;">
-                      @log.Tour.Name - @log.Comment
-                    </a>
+                    <div class="anchor-hover-effect" @onclick="() => _viewModel.NavigateToDetail(log.TourId)" style="cursor: pointer; width: 100%">
+                        @log.Tour.Name - @log.Comment
+                    </div>
                 </li>
                 }
             </ul>

@@ -5,7 +5,7 @@ using TourPlanner.Services;
 
 namespace TourPlanner.ViewModels.TourViewModels;
 
-public class TourListViewModel(TourService tourService, TimeFormatService timeFormatService)
+public class TourListViewModel(TourService tourService, TimeFormatService timeFormatService, NavigationManager navigationManager)
     : ObservableObject
 {
     public TimeFormatService TimeFormatService { get; } = timeFormatService;
@@ -39,5 +39,11 @@ public class TourListViewModel(TourService tourService, TimeFormatService timeFo
         {
             ErrorMessage = "No tours available.";
         }
+    }
+    
+    public void NavigateToDetail(string tourId)
+    {
+        var url =$"/tour/details/{tourId}";
+        navigationManager.NavigateTo(url);
     }
 }

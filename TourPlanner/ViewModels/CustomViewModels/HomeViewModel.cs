@@ -72,4 +72,10 @@ public class HomeViewModel(TourService tourService, TourLogService tourLogServic
             navigationManager.NavigateTo(SearchUrl);
         }
     }
+    
+    public void NavigateToDetail(string tourId)
+    {
+        var url =$"/tour/details/{tourId}";
+        navigationManager.NavigateTo(url);
+    }
 }

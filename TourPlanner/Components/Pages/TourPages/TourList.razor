@@ -3,6 +3,8 @@
 @using TourPlanner.ViewModels.TourViewModels
 @inject TourService TourService
 @inject TimeFormatService TimeFormatService
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
 
 <PageTitle>Tours</PageTitle>
 
@@ -21,10 +23,16 @@
         </div>
         @if (_viewModel != null)
         {
-            <RadzenDataGrid Data="@_viewModel.Tours" TItem="TourModel" GridLines="DataGridGridLines.Vertical" ColumnWidth="auto" AllowColumnResize="true" Style="border-radius: 1.5rem">
+            <RadzenDataGrid Data="@_viewModel.Tours" TItem="TourModel" GridLines="DataGridGridLines.Vertical" ColumnWidth="auto" AllowColumnResize="true" AllowSorting="true" Style="border-radius: 1.5rem">
                 <Columns>
-                    <RadzenDataGridColumn TItem="TourModel" Property="Name" Title="Name" MinWidth="15rem" Frozen="true" FrozenPosition="FrozenColumnPosition.Left"/>
-                    <RadzenDataGridColumn TItem="TourModel" Property="Start" Title="Start" />
+                    <RadzenDataGridColumn TItem="TourModel" Property="Name" Title="Name" MinWidth="15rem" Frozen="true" Sortable="true" FrozenPosition="FrozenColumnPosition.Left">
+                        <Template Context="tour" class="anchor-hover-effect">
+                            <div class="anchor-hover-effect" @onclick="() => _viewModel.NavigateToDetail(tour.Id)" style="cursor: pointer;">
+                                @tour.Name
+                            </div>
+                        </Template>
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="TourModel" Property="Start" Title="Start" Sortable="true" />
                     <RadzenDataGridColumn TItem="TourModel" Property="End" Title="End" />
                     <RadzenDataGridColumn TItem="TourModel" Property="TransportType" Title="Transport Type" Width="8rem"/>
                     <RadzenDataGridColumn TItem="TourModel" Property="Popularity" Title="Popularity" Width="8rem"/>
@@ -45,7 +53,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _viewModel = new TourListViewModel(TourService, TimeFormatService);
+        _viewModel = new TourListViewModel(TourService, TimeFormatService, NavigationManager);
         await _viewModel.InitializeAsync();
     }
 }
