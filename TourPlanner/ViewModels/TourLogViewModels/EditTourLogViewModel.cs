@@ -29,7 +29,7 @@ public class EditTourLogViewModel(TourLogService tourLogService, TourService tou
         set => SetProperty(ref _tourId, value);
     }
 
-    public string TourLogId
+    private string TourLogId
     {
         get => _tourLogId;
         set => SetProperty(ref _tourLogId, value);

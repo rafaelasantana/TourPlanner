@@ -3,15 +3,8 @@ using TourPlanner.Services;
 
 namespace TourPlanner.ViewModels.CustomViewModels;
 
-public class InputFieldToCreateTourLogViewModel : ObservableObject
+public class InputFieldToCreateTourLogViewModel(NavigationManager navigationManager) : ObservableObject
 {
-    private readonly NavigationManager _navigationManager;
-
-    public InputFieldToCreateTourLogViewModel(NavigationManager navigationManager)
-    {
-        _navigationManager = navigationManager;
-    }
-
     private string _tourId = string.Empty;
     private string _createTourLogComment = string.Empty;
     private string _errorMessage = string.Empty;
@@ -44,7 +37,7 @@ public class InputFieldToCreateTourLogViewModel : ObservableObject
     {
         if (!string.IsNullOrEmpty(CreateTourLogComment))
         {
-            _navigationManager.NavigateTo(CreateTourLogUrl);
+            navigationManager.NavigateTo(CreateTourLogUrl);
         }
         else
         {

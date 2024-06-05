@@ -9,10 +9,10 @@
 <CustomBodyContainerWide>
     <CustomBodyWrapperRounded>
         <div class="row pe-0 ">
-            <div class="col">
+            <div class="col ms-2">
                 <CustomPrimaryHeader Text="All Tours"></CustomPrimaryHeader>
             </div>
-            <div class="col float-end text-end pe-1">
+            <div class="col float-end text-end pe-1 me-2">
                 <a href="/tour/create" class="btn btn-outline-secondary rounded-pill" style="width: 8rem;">
                     <i class="bi bi-plus-circle"></i>
                     <span class="ms-1">Create</span>
@@ -21,7 +21,7 @@
         </div>
         @if (_viewModel != null)
         {
-            <RadzenDataGrid Data="@_viewModel.Tours" TItem="TourModel" GridLines="DataGridGridLines.Vertical" ColumnWidth="auto" AllowColumnResize="true">
+            <RadzenDataGrid Data="@_viewModel.Tours" TItem="TourModel" GridLines="DataGridGridLines.Vertical" ColumnWidth="auto" AllowColumnResize="true" Style="border-radius: 1.5rem">
                 <Columns>
                     <RadzenDataGridColumn TItem="TourModel" Property="Name" Title="Name" MinWidth="15rem" Frozen="true" FrozenPosition="FrozenColumnPosition.Left"/>
                     <RadzenDataGridColumn TItem="TourModel" Property="Start" Title="Start" />

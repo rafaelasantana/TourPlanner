@@ -1,0 +1,60 @@
+@page "/search"
+@using Microsoft.AspNetCore.WebUtilities
+@using TourPlanner.Models
+@using TourPlanner.Services
+@using TourPlanner.ViewModels.CustomViewModels
+@inject NavigationManager NavigationManager
+@inject TourLogService TourLogService
+@inject TourService TourService
+@inject NavigationManager Navigation
+
+@rendermode InteractiveServer
+
+<PageTitle>Search</PageTitle>
+
+<CustomBodyContainerMedium>
+    <CustomBodyWrapperRounded>
+        <CustomPrimaryHeader Text="Search"/>
+        <EditForm method="get" Model="@_viewModel" OnValidSubmit="@_viewModel.SearchAsync" FormName="searchForm" Enhance>
+            <div class="custom-wrapper-input-pill ms-0 mb-0">
+                <input type="text" class="custom-text-input-pill" placeholder="Search in Tours and Logs..."  @bind-value="_viewModel.SearchQuery">
+                <button class="custom-button-pill btn btn-outline-secondary" type="submit" id="searchButton">
+                    <i class="bi bi-search"></i>
+                    <span class="ms-1">Search</span>
+                </button>
+            </div>
+        </EditForm>
+
+        <RadzenDataGrid Data="@_viewModel.SearchResults" TItem="SearchResultModel" ColumnWidth="auto" AllowColumnResize="true" AllowSorting="true" class="mt-3" Style="border-radius: 1.5rem" DefaultSortColumn="Title" DefaultSortOrder="Ascending">
+            <Columns>
+                <RadzenDataGridColumn TItem="SearchResultModel" Property="Title" Title="Title" SortOrder="SortOrder.Ascending" Sortable="true">
+                    <Template Context="result">
+                        <div @onclick="() => _viewModel.NavigateToDetail(result)" class="anchor-hover-effect" style="cursor: pointer;">
+                            @result.Title
+                        </div>
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="SearchResultModel" Property="Type" Title="Type" Width="10rem" Sortable="true">
+                    <Template Context="result">
+                        <div class="rounded-pill pill @(result.Type == "Tour" ? "pill-tour" : "pill-log")">@result.Type</div>
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="SearchResultModel" Property="CreatedOn" Title="Created On" Width="10rem" Sortable="true">
+                    <Template Context="result">
+                        <div>@result.CreatedOn.ToString("yyyy-MM-dd")</div>
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+        </RadzenDataGrid>
+    </CustomBodyWrapperRounded>
+</CustomBodyContainerMedium>
+
+@code {
+    private SearchViewModel _viewModel = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _viewModel = new SearchViewModel(TourService, TourLogService, NavigationManager);
+        await _viewModel.InitializeAsync();
+    }
+}

@@ -65,7 +65,6 @@ background-color: #dc3545 !important;
 .pill-normal,
 .pill-ok {
     background-color: rgb(255, 237, 57);
-
 }
 
 .pill-hard,
@@ -77,6 +76,15 @@ background-color: #dc3545 !important;
 .pill-awful {
     background-color: #ff664f;
 }
+
+.pill-tour {
+    background-color: rgba(109, 239, 251, 0.83);
+}
+
+.pill-log {
+    background-color: #fde170;
+}
+
 
 .input-group-custom {
     border-radius: 0.5rem; /* Adjust as needed */
@@ -147,4 +155,34 @@ background-color: #dc3545 !important;
 .custom-button-pill i,
 .custom-button-pill span {
     margin: 0;
+}
+/*
+
+.anchor-hover-effect {
+    transition: color 0.2s ease, font-weight 0.2s ease;
+    text-decoration: none;
+    color: grey;
+}
+
+.anchor-hover-effect:hover {
+    font-weight: bold;
+    color: black;
+}*/
+
+.anchor-hover-effect {
+    transition: color 0.1s ease, font-weight 0.1s ease;
+}
+
+.anchor-hover-effect:hover {
+    font-weight: bold;
+}
+
+.anchor-text-hover-effect {
+    transition: color 0.1s ease, font-weight 0.1s ease;
+    text-decoration: none;
+    color: grey;
+}
+
+.anchor-text-hover-effect:hover {
+    color: black;
 }

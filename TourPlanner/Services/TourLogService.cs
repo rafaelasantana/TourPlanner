@@ -106,9 +106,7 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
             return (false, $"Exception when updating tour log: {ex.Message}");
         }
     }
-
-
-
+    
     public async Task<(bool isSuccess, string? errorMessage)> DeleteTourLogAsync(string tourLogId)
     {
         try
@@ -127,6 +125,32 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
         catch (Exception ex)
         {
             return (false, $"Exception when deleting tour log: {ex.Message}");
+        }
+    }
+    
+    public async Task<(List<TourLogModel>? logs, string? errorMessage)> SearchTourLogsAsync(string searchQuery)
+    {
+        try
+        {
+            var url = $"tour-logs?$search={Uri.EscapeDataString(searchQuery)}&$expand=tour($select=name)";
+            var response = await httpClientWrapper.GetAsync(url);
+            var responseBody = await response.Content.ReadAsStringAsync();
+
+            if (response.IsSuccessStatusCode)
+            {
+                var logsResponse = JsonSerializer.Deserialize<TourLogListResponseModel>(responseBody);
+                return (logsResponse?.TourLogs, null);
+            }
+            else
+            {
+                var errorData = JsonSerializer.Deserialize<ApiErrorResponse>(responseBody);
+                var errorMessage = errorData?.Error?.Message ?? "An error occurred while fetching the tour logs.";
+                return (null, errorMessage);
+            }
+        }
+        catch (Exception ex)
+        {
+            return (null, $"Exception when fetching tour logs: {ex.Message}");
         }
     }
 }

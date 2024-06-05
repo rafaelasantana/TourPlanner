@@ -25,7 +25,7 @@
                 <CustomInputFieldToCreateTourLog TourId="@_viewModel.TourId"/>
             </div>
         </div>
-        <RadzenDataGrid Data="@_viewModel.TourLogs" TItem="TourLogModel" ColumnWidth="auto" AllowColumnResize="true" class="responsive-table">
+        <RadzenDataGrid Data="@_viewModel.TourLogs" TItem="TourLogModel" ColumnWidth="auto" AllowColumnResize="true" Style="border-radius: 1.5rem">
             <Columns>
                 <RadzenDataGridColumn TItem="TourLogModel" Property="Comment" Title="Comment" />
                 <RadzenDataGridColumn TItem="TourLogModel" Property="Difficulty" Title="Difficulty" Width="10rem">

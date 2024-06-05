@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using TourPlanner.Models.TourModels;
 
 namespace TourPlanner.Models.TourLogModels;
 
@@ -24,7 +25,7 @@ public class TourLogModel
     public string TotalTime { get; set; } = string.Empty;
     
     // Extra for formatted time
-    public string? FormattedTotalTime { get; set; } = string.Empty;
+    public string? FormattedTotalTime { get; set; } = string.Empty; 
     
     // Extra for a descriptive rating based on the numerical value
     public string RatingDescription => Rating switch
@@ -45,4 +46,7 @@ public class TourLogModel
     
     [JsonPropertyName("tourId")]
     public string TourId { get; set; } = string.Empty;
+    
+    [JsonPropertyName("tour")]
+    public TourModel Tour { get; set; } = new TourModel();
 }

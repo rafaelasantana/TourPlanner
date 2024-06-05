@@ -61,4 +61,5 @@ public class TourModel
     
     [JsonPropertyName("tourLogs")]
     public List<TourLogModel>? TourLogs { get; set; }
+    
 }

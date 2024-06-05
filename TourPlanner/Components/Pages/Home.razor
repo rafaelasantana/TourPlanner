@@ -1,5 +1,7 @@
 ﻿@page "/"
+@using TourPlanner.ViewModels.CustomViewModels
 @inject NavigationManager NavigationManager
+@rendermode InteractiveServer
 
 <PageTitle>Home</PageTitle>
 
@@ -8,9 +10,15 @@
     <CustomBodyWrapperRounded>
         <div class="row justify-content-center">
             <p class="fs-1 text-center">Welcome to Tour Planner</p>
-            <form action="" class=" col-12 mt-3">
-                <FormSingleTextInputAndButton PlaceholderText="Search in Tours and Logs..." SubmitButtonText="Search"></FormSingleTextInputAndButton>
-            </form>
+            <div class="col-12 mt-3">
+                <div class="custom-wrapper-input-pill ms-0 mb-0">
+                    <input type="text" class="custom-text-input-pill" placeholder="Search in Tours and Logs..." @bind-value="_viewModel.SearchQuery">
+                    <a class="custom-button-pill btn btn-outline-secondary" href="@_viewModel.SearchUrl" @onclick="@_viewModel.NavigateToSearch">
+                        <i class="bi bi-search"></i>
+                        <span class="ms-1">Search</span>
+                    </a> 
+                </div>
+            </div>
         </div>
     </CustomBodyWrapperRounded>
     <CustomBodyWrapperRounded>
@@ -65,6 +73,15 @@
             </ul>
         </div>
     </CustomBodyWrapperRounded>
-
-
 </CustomBodyContainerMedium>
+
+@code {
+    
+    private HomeViewModel _viewModel = null!;
+
+    protected override Task OnInitializedAsync()
+    {
+        _viewModel = new HomeViewModel(NavigationManager);
+        return Task.CompletedTask;
+    }
+}

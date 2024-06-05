@@ -177,8 +177,33 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
                 return (false, $"Exception when calling API: {ex.Message}");
             }
         }
+        
+        public async Task<(List<TourModel>? tours, string? errorMessage)> SearchToursAsync(string searchQuery)
+        {
+            try
+            {
+                var url = $"tours?$search={Uri.EscapeDataString(searchQuery)}";
+                var response = await httpClientWrapper.GetAsync(url);
+                var responseBody = await response.Content.ReadAsStringAsync();
 
-    
+                if (response.IsSuccessStatusCode)
+                {
+                    var toursResponse = JsonSerializer.Deserialize<TourListResponseModel>(responseBody);
+                    return (toursResponse?.Tours, null);
+                }
+                else
+                {
+                    var errorData = JsonSerializer.Deserialize<ApiErrorResponse>(responseBody);
+                    var errorMessage = errorData?.Error?.Message ?? "An error occurred while fetching the tours.";
+                    return (null, errorMessage);
+                }
+            }
+            catch (Exception ex)
+            {
+                return (null, $"Exception when fetching tours: {ex.Message}");
+            }
+        }
+        
 }
 public class ApiErrorResponse
 {

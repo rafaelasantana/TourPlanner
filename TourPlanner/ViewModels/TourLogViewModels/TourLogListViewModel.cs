@@ -8,8 +8,7 @@ namespace TourPlanner.ViewModels.TourLogViewModels;
 public class TourLogListViewModel(TourLogService tourLogService, TimeFormatService timeFormatService, NavigationManager navigationManager)
     : ObservableObject
 {
-    public TimeFormatService TimeFormatService { get; } = timeFormatService;
-    private string _tourId = String.Empty;
+    private string _tourId = string.Empty;
     private string? _createTourLogComment;
     private string? _searchText;
     private string _totalTimeFormatted = String.Empty;
