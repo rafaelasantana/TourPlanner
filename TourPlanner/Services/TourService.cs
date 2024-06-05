@@ -204,6 +204,22 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
             }
         }
         
+        public async Task<List<TourModel>?> GetTopPopularToursAsync(int topN = 3)
+        {
+            try
+            {
+                var response = await httpClientWrapper.GetAsync($"tours?$orderby=popularity desc&$top={topN}");
+
+                if (!response.IsSuccessStatusCode) return null;
+                var tourResponse = await response.Content.ReadFromJsonAsync<TourListResponseModel>();
+                return tourResponse?.Tours;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        
 }
 public class ApiErrorResponse
 {

@@ -77,6 +77,8 @@ background-color: #dc3545 !important;
     background-color: #ff664f;
 }
 
+/* Tour and Log pills for search results */
+
 .pill-tour {
     background-color: rgba(109, 239, 251, 0.83);
 }
@@ -156,25 +158,16 @@ background-color: #dc3545 !important;
 .custom-button-pill span {
     margin: 0;
 }
-/*
 
 .anchor-hover-effect {
-    transition: color 0.2s ease, font-weight 0.2s ease;
+    transition: color 0.1s ease, font-weight 0.1s ease;
     text-decoration: none;
-    color: grey;
+    color: black;
 }
 
 .anchor-hover-effect:hover {
     font-weight: bold;
     color: black;
-}*/
-
-.anchor-hover-effect {
-    transition: color 0.1s ease, font-weight 0.1s ease;
-}
-
-.anchor-hover-effect:hover {
-    font-weight: bold;
 }
 
 .anchor-text-hover-effect {

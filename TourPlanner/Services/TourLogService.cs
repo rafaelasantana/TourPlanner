@@ -153,4 +153,20 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
             return (null, $"Exception when fetching tour logs: {ex.Message}");
         }
     }
+    
+    public async Task<List<TourLogModel>?> GetLatestTourLogsAsync(int topN = 3)
+    {
+        try
+        {
+            var response = await httpClientWrapper.GetAsync($"tour-logs?$orderby=createdOn desc&$top={topN}&$expand=tour($select=name)");
+
+            if (!response.IsSuccessStatusCode) return null;
+            var logsResponse = await response.Content.ReadFromJsonAsync<TourLogListResponseModel>();
+            return logsResponse?.TourLogs;
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
 }

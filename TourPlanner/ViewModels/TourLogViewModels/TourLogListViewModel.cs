@@ -5,13 +5,11 @@ using TourPlanner.Services;
 
 namespace TourPlanner.ViewModels.TourLogViewModels;
 
-public class TourLogListViewModel(TourLogService tourLogService, TimeFormatService timeFormatService, NavigationManager navigationManager)
+public class TourLogListViewModel(TourLogService tourLogService)
     : ObservableObject
 {
     private string _tourId = string.Empty;
-    private string? _createTourLogComment;
     private string? _searchText;
-    private string _totalTimeFormatted = String.Empty;
     private string? _errorMessage;
     public ObservableCollection<TourLogModel> TourLogs { get; set; } = [];
 
@@ -22,38 +20,19 @@ public class TourLogListViewModel(TourLogService tourLogService, TimeFormatServi
         set => SetProperty(ref _tourId, value);
 
     }
-    public string? CreateTourLogComment
-    {
-        get => _createTourLogComment;
-        set => SetProperty(ref _createTourLogComment, value);
-    }
-    
+
     public string? SearchText
     {
         get => _searchText;
         set => SetProperty(ref _searchText, value);
     }
-    
-    public string TotalTimeFormatted
-    {
-        get => _totalTimeFormatted;
-        set => SetProperty(ref _totalTimeFormatted, value);
-    }
-    
+
     public string? ErrorMessage
     {
         get => _errorMessage;
         set => SetProperty(ref _errorMessage, value);
     }
-    
-    private string _search = string.Empty;
 
-    public string Search
-    {
-        get => _search;
-        set => SetProperty(ref _search, value);
-    }
-    
     public async Task InitializeAsync(string? tourId)
     {
         if (tourId != null)
@@ -86,36 +65,19 @@ public class TourLogListViewModel(TourLogService tourLogService, TimeFormatServi
             ErrorMessage = errorMessage;
         }
     }
-
     
-    public void HandleCreateTourLog()
+    public async Task SearchAsync()
     {
-        if (!string.IsNullOrEmpty(CreateTourLogComment) && !string.IsNullOrEmpty(TourId))
+        await LoadTourLogsAsync(); // Load all logs
+        if (!string.IsNullOrEmpty(SearchText))
         {
-            var url = $"/tour-log/create?comment={Uri.EscapeDataString(CreateTourLogComment)}&tourId={Uri.EscapeDataString(TourId)}";
-            navigationManager.NavigateTo(url);
+            var filteredLogs = TourLogs.Where(log => log.Comment.Contains(SearchText, StringComparison.OrdinalIgnoreCase)).ToList();
+            TourLogs.Clear();
+            foreach (var log in filteredLogs)
+            {
+                TourLogs.Add(log);
+            }
         }
-        else
-        {
-            ErrorMessage = "Please ensure all fields are filled correctly.";
-        }
-    }
-
-    public void HandleSearchComment()
-    {
-        _ = LoadTourLogsAsync(); // Reload all logs if needed
-        if (string.IsNullOrEmpty(_searchText)) return;
-        var filtered = TourLogs.Where(log => log.Comment.Contains(_searchText, StringComparison.OrdinalIgnoreCase)).ToList();
-        TourLogs.Clear();
-        foreach (var log in filtered)
-        {
-            TourLogs.Add(log);
-        }
-    }
-
-    public void FilterLogs(string searchText)
-    {
-
     }
 
 }

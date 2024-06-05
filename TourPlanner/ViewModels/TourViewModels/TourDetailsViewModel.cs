@@ -10,8 +10,11 @@ public class TourDetailsViewModel(TourService tourService, TimeFormatService tim
     public TimeFormatService TimeFormatService { get; } = timeFormatService;
     private TourModel _tour = new TourModel();
     private string? _errorMessage;
-    private string? _tourId;
-    private string _estimatedTimeFormatted = String.Empty;
+    private readonly string? _tourId;
+    private string _estimatedTimeFormatted = string.Empty;
+    private string _popularityFormatted = string.Empty;
+    private string _childFriendlinessFormatted= string.Empty;
+
     public string EditUrl => navigationManager.ToAbsoluteUri($"/tour/edit/{TourId}").ToString();
     
     public string? TourId
@@ -30,6 +33,18 @@ public class TourDetailsViewModel(TourService tourService, TimeFormatService tim
     {
         get => _estimatedTimeFormatted;
         set => SetProperty(ref _estimatedTimeFormatted, value);
+    }
+    
+    public string PopularityFormatted
+    {
+        get => _popularityFormatted;
+        set => SetProperty(ref _popularityFormatted, value);
+    }
+    
+    public string ChildFriendlinessFormatted
+    {
+        get => _childFriendlinessFormatted;
+        set => SetProperty(ref _childFriendlinessFormatted, value);
     }
     
     public TourModel Tour
@@ -54,7 +69,9 @@ public class TourDetailsViewModel(TourService tourService, TimeFormatService tim
         {
             _tour = result.tour;
             _estimatedTimeFormatted = TimeFormatService.ParseIso8601DurationToString(_tour.EstimatedTime);
-            
+            _popularityFormatted = _tour.Popularity?.ToString() ?? "No data yet";
+            _childFriendlinessFormatted = _tour.ChildFriendliness ?? "No data yet";
+
         }
         else
         {

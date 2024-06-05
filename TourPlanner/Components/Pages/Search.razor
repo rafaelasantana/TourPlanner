@@ -25,7 +25,7 @@
             </div>
         </EditForm>
 
-        <RadzenDataGrid Data="@_viewModel.SearchResults" TItem="SearchResultModel" ColumnWidth="auto" AllowColumnResize="true" AllowSorting="true" class="mt-3" Style="border-radius: 1.5rem" DefaultSortColumn="Title" DefaultSortOrder="Ascending">
+        <RadzenDataGrid Data="@_viewModel.SearchResults" TItem="SearchResultModel" ColumnWidth="auto" AllowColumnResize="true" AllowSorting="true" class="mt-3" Style="border-radius: 1.5rem">
             <Columns>
                 <RadzenDataGridColumn TItem="SearchResultModel" Property="Title" Title="Title" SortOrder="SortOrder.Ascending" Sortable="true">
                     <Template Context="result">
@@ -41,7 +41,7 @@
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="SearchResultModel" Property="CreatedOn" Title="Created On" Width="10rem" Sortable="true">
                     <Template Context="result">
-                        <div>@result.CreatedOn.ToString("yyyy-MM-dd")</div>
+                        <div>@result.CreatedOn.ToString("dd-MM-yyyy")</div>
                     </Template>
                 </RadzenDataGridColumn>
             </Columns>

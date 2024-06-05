@@ -11,29 +11,29 @@
         </div>
         <div class="row p-0">
             <div class="col-12 col-lg-6 pe-0">
-                <EditForm Model="@_viewModel" OnValidSubmit="@_viewModel.HandleSearchComment" class="ps-0 mb-3">
-                    <FormSingleTextInputAndButton
-                        PlaceholderText="Search in logs"
-                        SubmitButtonText="Search"
-                        AriaLabel="Search"
-                        SubmitButtonId="tourLogSearch"
-                        IconClass="bi bi-search"
-                        BindInput="@_viewModel.SearchText" />
+                <EditForm Model="@_viewModel" OnValidSubmit="@_viewModel.SearchAsync">
+                    <div class="custom-wrapper-input-pill ms-0 mb-0">
+                        <input type="text" class="custom-text-input-pill" placeholder="Search in logs" @bind-value="_viewModel.SearchText">
+                        <button class="custom-button-pill btn btn-outline-secondary" type="submit" id="searchButton">
+                            <i class="bi bi-search"></i>
+                            <span class="ms-1">Search</span>
+                        </button>
+                    </div>
                 </EditForm>
             </div>
             <div class="col-12 col-lg-6 pe-0">
                 <CustomInputFieldToCreateTourLog TourId="@_viewModel.TourId"/>
             </div>
         </div>
-        <RadzenDataGrid Data="@_viewModel.TourLogs" TItem="TourLogModel" ColumnWidth="auto" AllowColumnResize="true" Style="border-radius: 1.5rem">
+        <RadzenDataGrid Data="@_viewModel.TourLogs" TItem="TourLogModel" ColumnWidth="auto" AllowColumnResize="true" AllowSorting="true" Style="border-radius: 1.5rem">
             <Columns>
-                <RadzenDataGridColumn TItem="TourLogModel" Property="Comment" Title="Comment" />
+                <RadzenDataGridColumn TItem="TourLogModel" Property="Comment" Title="Comment"/>
                 <RadzenDataGridColumn TItem="TourLogModel" Property="Difficulty" Title="Difficulty" Width="10rem">
                     <Template Context="tourLog">
                         <div class="rounded-pill pill @(GetDifficultyPillClass(tourLog.Difficulty))">@tourLog.Difficulty</div>
                     </Template>
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="TourLogModel" Property="TotalDistanceMeters" Title="Distance (Meters)" Width="10rem">
+                <RadzenDataGridColumn TItem="TourLogModel" Property="TotalDistanceMeters" Title="Distance (Meters)" Width="10rem" >
                     <Template Context="tourLog">
                         <div class="hide-on-small">@tourLog.TotalDistanceMeters</div>
                     </Template>
@@ -50,10 +50,10 @@
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="TourLogModel" Property="CreatedOn" Title="Created On" Width="11rem">
                     <Template Context="tourLog">
-                        <div class="hide-on-small">@tourLog.CreatedOn</div>
+                        <div class="hide-on-small">@tourLog.CreatedOn.ToString("dd-MM-yyyy")</div>
                     </Template>
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="TourLogModel" Title="Actions" Width="5rem">
+                <RadzenDataGridColumn TItem="TourLogModel"Width="5rem">
                     <Template Context="tourLog">
                         <CustomEditButtonRoundedPill Url="@($"tour-log/edit/{tourLog.Id}")" />
                     </Template>
@@ -71,7 +71,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _viewModel = new TourLogListViewModel(TourLogService, TimeFormatService, NavigationManager);
+        _viewModel = new TourLogListViewModel(TourLogService);
         await _viewModel.InitializeAsync(TourId);
     }
 
