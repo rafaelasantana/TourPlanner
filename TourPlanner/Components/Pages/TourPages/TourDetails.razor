@@ -16,11 +16,17 @@
             <CustomBodyWrapperRounded>
                 <div class="row">
                     <div class="row pe-0 ">
-                        <div class="col">
+                        <div class="col-4">
                             <p class="fs-3 ps-2">Tour Details</p>
                         </div>
                         <div class="col float-end text-end pe-1">
-                            <CustomEditButtonRoundedPill Url="@_viewModel.EditUrl"/>
+                            <a href="/tour/report/@TourId" class="btn btn-outline-secondary" style="width: 10rem; border-radius: 1rem; margin-right: 0.2rem">
+                                <i class="bi bi-file-earmark-pdf"></i> Create Report
+                            </a>
+                            <a href="/tour/manage/@TourId" class="btn btn-outline-secondary" style="width: 7rem; border-radius: 1rem; margin-right: 0.2rem">
+                                <i class="bi bi-download"></i> Export
+                            </a>
+                            <CustomEditButtonRoundedPill Url="@_viewModel.EditUrl" ButtonText="Edit"/>
                         </div>
                     </div>
                     <CustomWrapperSmall>

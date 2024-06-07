@@ -62,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyUGFnZXMvVG91ckxpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Pages/TourPages/TourReport.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub3VyUGFnZXMvVG91clJlcG9ydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

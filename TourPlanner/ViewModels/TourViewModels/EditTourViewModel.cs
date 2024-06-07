@@ -75,7 +75,6 @@ public class EditTourViewModel(TourService tourService, NavigationManager naviga
     }
     public async Task InitializeAsync(string? tourId)
     {
-        Console.WriteLine("Initializing ViewModel with TourId: " + tourId);
         await LoadTourAsync(tourId);
     }
     
@@ -115,7 +114,6 @@ public class EditTourViewModel(TourService tourService, NavigationManager naviga
 
     private async Task LoadTourAsync(string? tourId)
     {
-        Console.WriteLine("In LoadTourAsync: " + tourId);
         var result = await tourService.GetTourByIdAsync(tourId);
         if (result.tour != null)
         {

@@ -5,17 +5,9 @@ using TourPlanner.Services;
 
 namespace TourPlanner.ViewModels.TourViewModels;
 
-public class ExportTourViewModel : ObservableObject
+public class ExportTourViewModel(TourService tourService, NavigationManager navigationManager)
+    : ObservableObject
 {
-    private readonly TourService _tourService;
-    private readonly NavigationManager _navigationManager;
-
-    public ExportTourViewModel(TourService tourService, NavigationManager navigationManager)
-    {
-        _tourService = tourService;
-        _navigationManager = navigationManager;
-    }
-
     private string _selectedTourId = string.Empty;
     private List<TourModel> _tours = new();
     private string? _errorMessage;
@@ -61,7 +53,7 @@ public class ExportTourViewModel : ObservableObject
 
     private async Task LoadToursAsync()
     {
-        var tours = await _tourService.GetAllToursAsync();
+        var tours = await tourService.GetAllToursAsync();
         if (tours != null)
         {
             Tours = tours;
@@ -79,7 +71,7 @@ public class ExportTourViewModel : ObservableObject
         try
         {
             var tourIds = new List<string> { SelectedTourId };
-            var result = await _tourService.ExportTourAsync(tourIds, IncludeTourLogs, "xlsx");
+            var result = await tourService.ExportTourAsync(tourIds, IncludeTourLogs, "xlsx");
             if (result.isSuccess && result.fileContent != null)
             {
                 ErrorMessage = null;
@@ -88,7 +80,7 @@ public class ExportTourViewModel : ObservableObject
 
                 var base64 = Convert.ToBase64String(ExportedFileContent);
                 var downloadLink = $"data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{base64}";
-                _navigationManager.NavigateTo(downloadLink, true);
+                navigationManager.NavigateTo(downloadLink, true);
             }
             else
             {
@@ -108,6 +100,6 @@ public class ExportTourViewModel : ObservableObject
         if (ExportedFileContent == null) return;
         var base64 = Convert.ToBase64String(ExportedFileContent);
         var downloadLink = $"data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{base64}";
-        _navigationManager.NavigateTo(downloadLink, true);
+        navigationManager.NavigateTo(downloadLink, true);
     }
 }

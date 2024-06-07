@@ -1,0 +1,70 @@
+@page "/tour/report"
+@page "/tour/report/{TourId}"
+@using TourPlanner.Services
+@using TourPlanner.ViewModels.TourViewModels
+@inject TourService TourService
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Tour Report</PageTitle>
+
+<CustomBodyContainerNarrow>
+    <div class="col-10">
+        <CustomBodyWrapperRounded>
+            <CustomPrimaryHeader Text="Reports"/>
+            <EditForm Model="@_viewModel" OnValidSubmit="@_viewModel.GenerateReport" FormName="generateTourReport" Enhance>
+                <DataAnnotationsValidator/>
+                <CustomWrapperLarge>
+                    <label for="reportType" class="form-label">Report Type
+                    </label>
+                    <InputSelect id="reportType" class="form-control" @bind-Value="_viewModel.ReportType">
+                        <option value="single">Single Tour Report</option>
+                        <option value="summarized">Summarized Report</option>
+                    </InputSelect>
+                    <ValidationMessage For="() => _viewModel.ReportType" class="text-danger"></ValidationMessage>
+
+                    @if (_viewModel.ReportType == "single")
+                    {
+                    <label for="tourSelect" class="form-label mt-3">Select the Tour</label>
+                    <InputSelect id="tourSelect" class="form-control" @bind-Value="_viewModel.SelectedTourId">
+                        @foreach (var tour in _viewModel.Tours)
+                        {
+                        <option value="@tour.Id">@tour.Name</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="() => _viewModel.SelectedTourId" class="text-danger"></ValidationMessage>
+                    }
+
+                </CustomWrapperLarge>
+
+                @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+                {
+                <div class="alert alert-danger rounded-pill" role="alert">
+                    @_viewModel.ErrorMessage
+                </div>
+                }
+
+                <FormSubmitButtonSingle ButtonText="Generate Report" IconClass="bi bi-download" ButtonClass="btn-outline-secondary"/>
+
+            </EditForm>
+        </CustomBodyWrapperRounded>
+    </div>
+
+</CustomBodyContainerNarrow>
+
+@code {
+    [Parameter]
+    public string? TourId { get; set; }
+    
+    private TourReportViewModel _viewModel = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _viewModel = new TourReportViewModel(TourService, NavigationManager);
+        await _viewModel.InitializeAsync();
+        if (!string.IsNullOrEmpty(TourId))
+        {
+            _viewModel.SelectedTourId = TourId;
+        }
+    }
+}
