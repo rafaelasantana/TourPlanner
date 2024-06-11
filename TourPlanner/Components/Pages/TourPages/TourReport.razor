@@ -25,7 +25,7 @@
 
                     @if (_viewModel.ReportType == "single")
                     {
-                    <label for="tourSelect" class="form-label mt-3">Select the Tour</label>
+                    <label for="tourSelect" class="form-label mt-3">Select the Tour</label> 
                     <InputSelect id="tourSelect" class="form-control" @bind-Value="_viewModel.SelectedTourId">
                         @foreach (var tour in _viewModel.Tours)
                         {
