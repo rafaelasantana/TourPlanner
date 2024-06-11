@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/.DS_Store"
     },
     {
+      "Id": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/Images/journey.png",
+      "PackagePath": "staticwebassets/Images/journey.png"
+    },
+    {
       "Id": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/Images/map-placeholder.png",
       "PackagePath": "staticwebassets/Images/map-placeholder.png"
     },

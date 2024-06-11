@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zpTmlIagW8jf1oKN4rDuqWPFf0I9WIeFm5KRaBSHfPg=",
+  "Hash": "abrZhGBDfjAbxffGsL8rMFSAkI1SQBhmBZOem0xLRek=",
   "Source": "TourPlanner",
   "BasePath": "_content/TourPlanner",
   "Mode": "Default",
@@ -1782,6 +1782,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.png"
+    },
+    {
+      "Identity": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/Images/journey.png",
+      "SourceId": "TourPlanner",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/",
+      "BasePath": "_content/TourPlanner",
+      "RelativePath": "Images/journey.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Images/journey.png"
     },
     {
       "Identity": "/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/wwwroot/Images/map-placeholder.png",
