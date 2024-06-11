@@ -12,12 +12,12 @@ public class CreateTourLogViewModel(TourLogService tourLogService, TourService t
     private string _selectedTourId = string.Empty;
     private List<TourModel> _tours = [];
     private string _comment = string.Empty;
-    private DifficultyModel _difficulty;
+    private DifficultyModel _difficulty = DifficultyModel.VeryEasy;
     private double _totalDistanceMeters;
     private int _hours;
     private int _minutes;
     private string _totalTime = string.Empty;
-    private int _rating;
+    private int _rating = 5;
     private string? _errorMessage = string.Empty;
     
     [Required(ErrorMessage = "Tour is required.")]

@@ -11,7 +11,7 @@ public class CreateTourViewModel(TourService tourService, NavigationManager navi
 {
     private string _description = string.Empty;
     private string _name = string.Empty;
-    private TransportTypeModel _transportType;
+    private TransportTypeModel _transportType = TransportTypeModel.Foot;
     private string _start = string.Empty;
     private string _end = string.Empty;
     private string? _errorMessage = string.Empty;
