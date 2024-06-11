@@ -82,16 +82,18 @@ public class EditTourViewModel(TourService tourService, NavigationManager naviga
     {
         _showConfirmation = true;
     }
-
-    public void HandleConfirmation(bool confirmed)
+    
+    public async Task HandleConfirmation()
     {
-        if (confirmed)
-        {
-            _ = DeleteTourAsync();
-        }
-        _showConfirmation = false;
+        await DeleteTourAsync();
+        navigationManager.NavigateTo($"tour/details/{_tour.Id}");
     }
 
+    public void CancelConfirmation()
+    {
+        _showConfirmation = false;
+    }
+    
 
     private async Task DeleteTourAsync()
     {
@@ -161,6 +163,11 @@ public class EditTourViewModel(TourService tourService, NavigationManager naviga
         {
             return (false, $"Exception when updating tour: {ex.Message}");
         }
+    }
+    
+    public void NavigateBack()
+    {
+        navigationManager.NavigateTo($"tour/details/{_tour.Id}");
     }
 
 }

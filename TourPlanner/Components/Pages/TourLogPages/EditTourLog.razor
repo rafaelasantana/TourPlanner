@@ -12,84 +12,107 @@
 
 <CustomBodyContainerNarrow>
     <CustomBodyWrapperRounded>
-        <CustomPrimaryHeader Text="Edit Tour Log"/>
-        
         @if (_viewModel.ShowConfirmation)
         {
-        <FormConfirmationDialog Message="Are you sure you want to delete this tour log?" OnConfirm="_viewModel.HandleConfirmation" />
-        }
-        
-        <EditForm method="post" Model="@_viewModel" OnValidSubmit="@_viewModel.UpdateTourLogAsync" FormName="updateTourLog" Enhance>
-
-            <DataAnnotationsValidator/>
             <div class="row">
-                <CustomWrapperLarge>
-                    <label for="tourLogTour" class="form-label">Tour</label>
-                    <InputText id="tourLogTour" class="form-control" @bind-Value="@_viewModel.TourName" disabled />
-                    <ValidationMessage For="() => _viewModel.TourId" class="text-danger"></ValidationMessage>
-                </CustomWrapperLarge>
-                <CustomWrapperLarge>
-                    <label for="tourLogDifficulty" class="form-label">Difficulty</label>
-                    <InputSelect id="tourLogDifficulty" class="form-control" @bind-Value="_viewModel.Difficulty">
-                        @foreach (var difficultyLevel in Enum.GetValues(typeof(DifficultyModel)))
-                        {
-                            <option value="@difficultyLevel">@difficultyLevel</option>
-                        }
-                    </InputSelect>
-                    <ValidationMessage For="() => _viewModel.Difficulty" class="text-danger"></ValidationMessage>
-                </CustomWrapperLarge>
-                <CustomWrapperLarge>
-                    <label for="tourLogTotalDistance" class="form-label">Total Distance (Meters)</label>
-                    <InputNumber id="tourLogTotalDistance" class="form-control" @bind-Value="_viewModel.TotalDistanceMeters"/>
-                    <ValidationMessage For="() => _viewModel.TotalDistanceMeters" class="text-danger"></ValidationMessage>
-                </CustomWrapperLarge>
-                <CustomWrapperSmall>
-                    <label for="tourLogTotalTimeHours" class="form-label">Total Time - Hours</label>
-                    <InputNumber id="tourLogTotalTimeHours" class="form-control" @bind-Value="_viewModel.Hours" min="0" max="23"/>
-                    <ValidationMessage For="() => _viewModel.Hours" class="text-danger"></ValidationMessage>
-                </CustomWrapperSmall>
-
-                <CustomWrapperSmall>
-                    <label for="tourLogTotalTimeMinutes" class="form-label">Total Time - Minutes</label>
-                    <InputNumber id="tourLogTotalTimeMinutes" class="form-control" @bind-Value="_viewModel.Minutes" min="0" max="59"/>
-                    <ValidationMessage For="() => _viewModel.Minutes" class="text-danger"></ValidationMessage>
-                </CustomWrapperSmall>
-                <CustomWrapperLarge>
-                    <label for="tourLogRating" class="form-label">Rating</label>
-                    <InputSelect id="tourLogRating" class="form-control" @bind-Value="_viewModel.Rating">
-                        <option value="5">Great</option>
-                        <option value="4">Good</option>
-                        <option value="3">OK</option>
-                        <option value="2">Bad</option>
-                        <option value="1">Awful</option>
-                    </InputSelect>
-                    <ValidationMessage For="() => _viewModel.Rating" class="text-danger"></ValidationMessage>
-                </CustomWrapperLarge>
-                <CustomWrapperLarge>
-                    <label for="tourLogComment" class="form-label">Comment</label>
-                    <InputTextArea id="tourLogComment" class="form-control" @bind-Value="_viewModel.Comment"/>
-                    <ValidationMessage For="() => _viewModel.Comment" class="text-danger"></ValidationMessage>
-                </CustomWrapperLarge>
-            </div>
-            <ValidationSummary class="text-danger"/>
-
-            @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
-            {
-            <div class="alert alert-danger" role="alert">
-                @_viewModel.ErrorMessage
-            </div>
-            }
-
-            @if (!string.IsNullOrEmpty(_viewModel.SuccessMessage))
-            {
-                <div class="alert alert-success" role="alert">
-                    @_viewModel.SuccessMessage
+                <div class="col-10">
+                    <p>Are you sure you want to delete this tour?</p>
+                    <div class="confirmation-dialog-buttons">
+                        <button class="btn btn-outline-danger" @onclick="@(async () => await _viewModel.HandleConfirmation())" style="width: 8rem; border-radius: 1rem; margin-right: 0.5rem">
+                            <span class="ms-1">Delete</span>
+                        </button>
+                        <button class="btn btn-outline-secondary" @onclick="_viewModel.CancelConfirmation" style="width: 8rem; border-radius: 1rem; margin-right: 0.5rem">
+                            <span class="ms-1">Cancel</span>
+                        </button>
+                    </div>
                 </div>
-                <a class="btn btn-outline-secondary" href="/tour/details/@_viewModel.TourId">Return to Tour Details</a>
-            }
+            </div>
+        }
+        else
+        {
+            <button class="btn btn-outline-secondary mb-3" @onclick="_viewModel.NavigateBack" style="width: 6rem; height: 2.4rem; border-radius: 1rem; margin-right: 0.5rem">
+                <i class="bi bi-arrow-return-left"></i>
+                <span class="ms-1">Back</span>
+            </button>
+        
+            <CustomPrimaryHeader Text="Edit Log"/>
+            <EditForm method="post" Model="@_viewModel" OnValidSubmit="@_viewModel.UpdateTourLogAsync" FormName="updateTourLog" Enhance>
+                <DataAnnotationsValidator/>
+                <div class="row">
+                    <CustomWrapperLarge>
+                        <label for="tourLogTour" class="form-label">Tour</label>
+                        <InputText id="tourLogTour" class="form-control" @bind-Value="@_viewModel.TourName" disabled/>
+                        <ValidationMessage For="() => _viewModel.TourId" class="text-danger"></ValidationMessage>
+                    </CustomWrapperLarge>
+                    <CustomWrapperLarge>
+                        <label for="tourLogDifficulty" class="form-label">Difficulty</label>
+                        <InputSelect id="tourLogDifficulty" class="form-control" @bind-Value="_viewModel.Difficulty">
+                            @foreach (var difficultyLevel in Enum.GetValues(typeof(DifficultyModel)))
+                            {
+                                <option value="@difficultyLevel">@difficultyLevel</option>
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="() => _viewModel.Difficulty" class="text-danger"></ValidationMessage>
+                    </CustomWrapperLarge>
+                    <CustomWrapperLarge>
+                        <label for="tourLogTotalDistance" class="form-label">Total Distance (Meters)</label>
+                        <InputNumber id="tourLogTotalDistance" class="form-control" @bind-Value="_viewModel.TotalDistanceMeters"/>
+                        <ValidationMessage For="() => _viewModel.TotalDistanceMeters" class="text-danger"></ValidationMessage>
+                    </CustomWrapperLarge>
+                    <CustomWrapperSmall>
+                        <label for="tourLogTotalTimeHours" class="form-label">Total Time - Hours</label>
+                        <InputNumber id="tourLogTotalTimeHours" class="form-control" @bind-Value="_viewModel.Hours" min="0" max="23"/>
+                        <ValidationMessage For="() => _viewModel.Hours" class="text-danger"></ValidationMessage>
+                    </CustomWrapperSmall>
 
-            <FormSubmitAndDangerButtons SubmitButtonText="Apply Changes" DangerButtonText="Delete Tour Log" OnDangerButtonClick="@_viewModel.RequestConfirmation"/>
-        </EditForm>
+                    <CustomWrapperSmall>
+                        <label for="tourLogTotalTimeMinutes" class="form-label">Total Time - Minutes</label>
+                        <InputNumber id="tourLogTotalTimeMinutes" class="form-control" @bind-Value="_viewModel.Minutes" min="0" max="59"/>
+                        <ValidationMessage For="() => _viewModel.Minutes" class="text-danger"></ValidationMessage>
+                    </CustomWrapperSmall>
+                    <CustomWrapperLarge>
+                        <label for="tourLogRating" class="form-label">Rating</label>
+                        <InputSelect id="tourLogRating" class="form-control" @bind-Value="_viewModel.Rating">
+                            <option value="5">Great</option>
+                            <option value="4">Good</option>
+                            <option value="3">OK</option>
+                            <option value="2">Bad</option>
+                            <option value="1">Awful</option>
+                        </InputSelect>
+                        <ValidationMessage For="() => _viewModel.Rating" class="text-danger"></ValidationMessage>
+                    </CustomWrapperLarge>
+                    <CustomWrapperLarge>
+                        <label for="tourLogComment" class="form-label">Comment</label>
+                        <InputTextArea id="tourLogComment" class="form-control" @bind-Value="_viewModel.Comment"/>
+                        <ValidationMessage For="() => _viewModel.Comment" class="text-danger"></ValidationMessage>
+                    </CustomWrapperLarge>
+                </div>
+                <ValidationSummary class="text-danger"/>
+
+                @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @_viewModel.ErrorMessage
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(_viewModel.SuccessMessage))
+                {
+                    <div class="alert alert-success" role="alert">
+                        @_viewModel.SuccessMessage
+                    </div>
+                    <div class="row justify-content-center">
+                        <a class="btn btn-outline-secondary" href="/tour/details/@_viewModel.TourId" style="width: 13rem; border-radius: 1rem">Return to Tour Details</a>
+                    </div>
+                }
+                else
+                {
+                    <FormSubmitAndDangerButtons SubmitButtonText="Apply Changes" DangerButtonText="Delete Tour Log" OnDangerButtonClick="@_viewModel.RequestConfirmation"/>
+                }
+
+            </EditForm>
+        }
+
     </CustomBodyWrapperRounded>
 </CustomBodyContainerNarrow>
 

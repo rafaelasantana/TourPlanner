@@ -43,6 +43,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Blazorise": {
+              "target": "Package",
+              "version": "[1.5.3, )"
+            },
+            "Blazorise.Sidebar": {
+              "target": "Package",
+              "version": "[1.5.3, )"
+            },
             "Castle.Core": {
               "target": "Package",
               "version": "[5.1.1, )"

@@ -115,3 +115,15 @@
 /Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/obj/Debug/net8.0/TourPlanner.pdb
 /Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/obj/Debug/net8.0/TourPlanner.genruntimeconfig.cache
 /Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/obj/Debug/net8.0/ref/TourPlanner.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Blazorise.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Blazorise.Licensing.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Blazorise.Sidebar.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Microsoft.AspNetCore.Authorization.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Microsoft.AspNetCore.Components.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Microsoft.AspNetCore.Components.Forms.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Microsoft.AspNetCore.Components.Web.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Microsoft.AspNetCore.Metadata.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/rafaelasantana/RiderProjects/TourPlannerFrontend/TourPlanner/bin/Debug/net8.0/Microsoft.JSInterop.dll

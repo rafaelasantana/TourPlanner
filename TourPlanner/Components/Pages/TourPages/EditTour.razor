@@ -11,64 +11,85 @@
 
 <CustomBodyContainerNarrow>
     <CustomBodyWrapperRounded>
-        <CustomPrimaryHeader Text="Edit Tour"/>
-        
         @if (_viewModel.ShowConfirmation)
         {
-            <FormConfirmationDialog Message="Are you sure you want to delete this tour?" OnConfirm="_viewModel.HandleConfirmation" />
-        }
-        
-        <EditForm method="put" Model="@_viewModel" OnValidSubmit="@_viewModel.UpdateTourAsync" FormName="updateTour" Enhance>
-            <DataAnnotationsValidator/>
             <div class="row">
-
-                <CustomWrapperLarge>
-                    <label for="tourName" class="form-label">Name</label>
-                    <InputText id="tourName" class="form-control" @bind-Value="_viewModel.Name"/>
-                    <ValidationMessage For="() => _viewModel.Name" class="text-danger"></ValidationMessage>
-                </CustomWrapperLarge>
-
-                <CustomWrapperLarge>
-                    <label for="tourTransportType">Transport Type</label>
-                    <InputSelect id="tourTransportType" class="form-control" @bind-Value="_viewModel.TransportType" disabled>
-                        @foreach (var type in Enum.GetValues(typeof(TransportTypeModel)))
-                        {
-                        <option value="@type">@type</option>
-                        }
-                    </InputSelect>
-                    <ValidationMessage For="() => _viewModel.TransportType" class="text-danger"></ValidationMessage>
-                </CustomWrapperLarge>
-
-                <CustomWrapperSmall>
-                    <label for="tourStartingPoint" class="form-label">Starting Point</label>
-                    <InputText id="tourStartingPoint" class="form-control" @bind-Value="_viewModel.Start" disabled/>
-                    <ValidationMessage For="() => _viewModel.Start" class="text-danger"></ValidationMessage>
-                </CustomWrapperSmall>
-
-                <CustomWrapperSmall>
-                    <label for="tourEndPoint" class="form-label">End Point</label>
-                    <InputText id="tourEndPoint" class="form-control" @bind-Value="_viewModel.End" disabled/>
-                    <ValidationMessage For="() =>_viewModel.End" class="text-danger"></ValidationMessage>
-                </CustomWrapperSmall>
-
-                <CustomWrapperLarge>
-                    <label for="tourDescription" class="form-label">Description</label>
-                    <InputTextArea id="tourDescription" class="form-control" @bind-Value="_viewModel.Description"/>
-                    <ValidationMessage For="() => _viewModel.Description" class="text-danger"></ValidationMessage>
-                </CustomWrapperLarge>
-            </div>
-
-            <ValidationSummary class="text-danger"/>
-
-            @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
-            {
-                <div class="alert alert-danger" role="alert">
-                    @_viewModel.ErrorMessage
+                <div class="col-10">
+                    <p>Are you sure you want to delete this tour?</p>
+                    <div class="confirmation-dialog-buttons">
+                        <button class="btn btn-outline-danger" @onclick="@(async () => await _viewModel.HandleConfirmation())" style="width: 8rem; border-radius: 1rem; margin-right: 0.5rem">
+                            <span class="ms-1">Delete</span>
+                        </button>
+                        <button class="btn btn-outline-secondary" @onclick="_viewModel.CancelConfirmation" style="width: 8rem; border-radius: 1rem; margin-right: 0.5rem">
+                            <span class="ms-1">Cancel</span>
+                        </button>
+                    </div>
                 </div>
-            }
-            <FormSubmitAndDangerButtons SubmitButtonText="Apply Changes" DangerButtonText="Delete Tour" OnDangerButtonClick="@_viewModel.RequestConfirmation"/>
+            </div>
+        }
+        else
+        { 
+            <button class="btn btn-outline-secondary mb-3" @onclick="_viewModel.NavigateBack" style="width: 6rem; height: 2.4rem; border-radius: 1rem; margin-right: 0.5rem">
+                <i class="bi bi-arrow-return-left"></i>
+                <span class="ms-1">Back</span>
+            </button>
+            <CustomPrimaryHeader Text="Edit Tour"/>
+            
+            <EditForm method="put" Model="@_viewModel" OnValidSubmit="@_viewModel.UpdateTourAsync" FormName="updateTour" Enhance>
+                <DataAnnotationsValidator/>
+                <div class="row">
 
-        </EditForm>
+                    <CustomWrapperLarge>
+                        <label for="tourName" class="form-label">Name</label>
+                        <InputText id="tourName" class="form-control" @bind-Value="_viewModel.Name"/>
+                        <ValidationMessage For="() => _viewModel.Name" class="text-danger"></ValidationMessage>
+                    </CustomWrapperLarge>
+
+                    <CustomWrapperLarge>
+                        <label for="tourTransportType">Transport Type</label>
+                        <InputSelect id="tourTransportType" class="form-control" @bind-Value="_viewModel.TransportType" disabled>
+                            @foreach (var type in Enum.GetValues(typeof(TransportTypeModel)))
+                            {
+                                <option value="@type">@type</option>
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="() => _viewModel.TransportType" class="text-danger"></ValidationMessage>
+                    </CustomWrapperLarge>
+
+                    <CustomWrapperSmall>
+                        <label for="tourStartingPoint" class="form-label">Starting Point</label>
+                        <InputText id="tourStartingPoint" class="form-control" @bind-Value="_viewModel.Start" disabled/>
+                        <ValidationMessage For="() => _viewModel.Start" class="text-danger"></ValidationMessage>
+                    </CustomWrapperSmall>
+
+                    <CustomWrapperSmall>
+                        <label for="tourEndPoint" class="form-label">End Point</label>
+                        <InputText id="tourEndPoint" class="form-control" @bind-Value="_viewModel.End" disabled/>
+                        <ValidationMessage For="() => _viewModel.End" class="text-danger"></ValidationMessage>
+                    </CustomWrapperSmall>
+
+                    <CustomWrapperLarge>
+                        <label for="tourDescription" class="form-label">Description</label>
+                        <InputTextArea id="tourDescription" class="form-control" @bind-Value="_viewModel.Description"/>
+                        <ValidationMessage For="() => _viewModel.Description" class="text-danger"></ValidationMessage>
+                    </CustomWrapperLarge>
+                </div>
+
+                <ValidationSummary class="text-danger"/>
+
+                @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @_viewModel.ErrorMessage
+                    </div>
+                }
+                <FormSubmitAndDangerButtons SubmitButtonText="Apply Changes" DangerButtonText="Delete Tour" OnDangerButtonClick="@_viewModel.RequestConfirmation"/>
+
+            </EditForm>
+            
+        }
+
+
     </CustomBodyWrapperRounded>
 
 </CustomBodyContainerNarrow>

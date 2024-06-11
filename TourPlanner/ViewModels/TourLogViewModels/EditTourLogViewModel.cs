@@ -128,12 +128,14 @@ public class EditTourLogViewModel(TourLogService tourLogService, TourService tou
         ShowConfirmation = true;
     }
 
-    public void HandleConfirmation(bool confirmed)
+    public async Task HandleConfirmation()
     {
-        if (confirmed)
-        {
-            _ = DeleteTourLogAsync();
-        }
+        await DeleteTourLogAsync();
+        navigationManager.NavigateTo($"tour/details/{TourId}");
+    }
+
+    public void CancelConfirmation()
+    {
         ShowConfirmation = false;
     }
 
@@ -226,5 +228,10 @@ public class EditTourLogViewModel(TourLogService tourLogService, TourService tou
         {
             ErrorMessage = errorMessage;
         }
+    }
+    
+    public void NavigateBack()
+    {
+        navigationManager.NavigateTo($"tour/details/{_tourId}");
     }
 }

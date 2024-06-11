@@ -10,6 +10,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Blazorise" Version="1.5.3" />
+        <PackageReference Include="Blazorise.Sidebar" Version="1.5.3" />
         <PackageReference Include="Castle.Core" Version="5.1.1" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
         <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />

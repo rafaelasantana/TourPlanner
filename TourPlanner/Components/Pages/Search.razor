@@ -34,7 +34,7 @@
                         </div>
                     </Template>
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="SearchResultModel" Property="Type" Title="Type" Width="10rem" Sortable="true">
+                <RadzenDataGridColumn TItem="SearchResultModel" Property="Type" Width="10rem" Sortable="true">
                     <Template Context="result">
                         <div class="rounded-pill pill @(result.Type == "Tour" ? "pill-tour" : "pill-log")">@result.Type</div>
                     </Template>
