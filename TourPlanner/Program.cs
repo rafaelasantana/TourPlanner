@@ -1,5 +1,7 @@
 global using Microsoft.Toolkit.Mvvm;
 global using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using TourPlanner.Components;
 using TourPlanner.Services;
 using Radzen;
@@ -17,6 +19,13 @@ builder.Services.AddRadzenComponents();
 
 // Register HttpClient
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5000/v1/") });
+
+// Add JSON options
+builder.Services.AddControllers()
+       .AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
+        });
 
 // Register the HttpClientWrapper
 builder.Services.AddScoped<IHttpClientWrapper, HttpClientWrapper>();

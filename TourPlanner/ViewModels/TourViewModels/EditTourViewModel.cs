@@ -86,7 +86,7 @@ public class EditTourViewModel(TourService tourService, NavigationManager naviga
     public async Task HandleConfirmation()
     {
         await DeleteTourAsync();
-        navigationManager.NavigateTo($"tour/details/{_tour.Id}");
+        // navigationManager.NavigateTo($"tour/details/{_tour.Id}");
     }
 
     public void CancelConfirmation()

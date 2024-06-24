@@ -3,6 +3,17 @@ using System.Text.Json.Serialization;
 using TourPlanner.Models.TourLogModels;
 
 namespace TourPlanner.Models.TourModels;
+
+public enum Popularity
+{
+    NotPopular = 100,
+    SlightlyPopular = 200,
+    ModeratelyPopular = 300,
+    Popular = 400,
+    HighlyPopular = 500,
+    ExtremelyPopular = 600
+}
+
 public class TourModel
 {
     [JsonPropertyName("id")]
@@ -20,46 +31,41 @@ public class TourModel
     [Required(ErrorMessage = "Transport type is required.")]
     [JsonConverter(typeof(TransportTypeConverter))]
     public TransportTypeModel TransportType { get; set; }
-    
-    [JsonPropertyName("transportTypeInt")]
-    public int TransportTypeInt { get; set; }
-    
+
     [JsonPropertyName("start")]
     [Required(ErrorMessage = "Starting point is required.")]
     public string? Start { get; set; }
     
     [JsonPropertyName("startCoordinates")]
-    public CoordinatesModel StartCoordinates { get; set; } = new CoordinatesModel();
+    public CoordinatesModel StartCoordinates { get; set; } = new();
     
     [JsonPropertyName("end")]
     [Required(ErrorMessage = "End point is required.")]
     public string? End { get; set; }
     
     [JsonPropertyName("endCoordinates")]
-    public CoordinatesModel EndCoordinates { get; set; } = new CoordinatesModel();
+    public CoordinatesModel EndCoordinates { get; set; } = new();
     
     [JsonPropertyName("distanceMeters")]
     public double DistanceMeters { get; set; }
     
     [JsonPropertyName("estimatedTime")]
-    public string EstimatedTime { get; set; } = string.Empty;
+    [JsonConverter(typeof(TimeSpanConverter))]
+    public TimeSpan EstimatedTime { get; set; }
     
     // Extra for formatted time
     public string? FormattedEstimatedTime { get; set; } = string.Empty;
     
     [JsonPropertyName("popularity")]
-    public int? Popularity { get; set; }
+    public Popularity? Popularity { get; set; }
     
     public string? PopularityFormatted { get; set; }
     
     [JsonPropertyName("childFriendliness")]
-    public string? ChildFriendliness { get; set; }
+    public bool? ChildFriendliness { get; set; }
     
     [JsonPropertyName("createdOn")]
     public DateTime CreatedOn { get; set; }
-    
-    [JsonPropertyName("unprocessedLogsCounter")]
-    public int UnprocessedLogsCounter { get; set; }
     
     [JsonPropertyName("tourLogs")]
     public List<TourLogModel>? TourLogs { get; set; }

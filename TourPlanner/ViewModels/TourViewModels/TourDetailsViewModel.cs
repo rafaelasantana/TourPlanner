@@ -68,13 +68,31 @@ public class TourDetailsViewModel(TourService tourService, TimeFormatService tim
         if (result.tour != null)
         {
             _tour = result.tour;
-            _estimatedTimeFormatted = TimeFormatService.ParseIso8601DurationToString(_tour.EstimatedTime);
-            _popularityFormatted = _tour.Popularity?.ToString() ?? "No data yet";
-            _childFriendlinessFormatted = _tour.ChildFriendliness ?? "No data yet";
+            _estimatedTimeFormatted = _tour.EstimatedTime.Format();
+            _popularityFormatted = PopularityToString(_tour.Popularity);
+            _childFriendlinessFormatted = ChildFriendlinessToString(_tour.ChildFriendliness);
         }
         else
         {
             ErrorMessage = result.errorMessage;
         }
     }
+
+    private string PopularityToString(Popularity? popularity) => popularity switch
+        {
+            Popularity.NotPopular => "Not popular",
+            Popularity.SlightlyPopular => "Slightly popular",
+            Popularity.ModeratelyPopular => "Moderately popular",
+            Popularity.Popular => "Popular",
+            Popularity.HighlyPopular => "Highly popular",
+            Popularity.ExtremelyPopular => "Extremely popular",
+            _ => "No data yet"
+        };
+
+    private string ChildFriendlinessToString(bool? childFriendliness) => childFriendliness switch
+        {
+            true => "Child-friendly",
+            false => "Not child-friendly",
+            _ => "No data yet"
+        };
 }

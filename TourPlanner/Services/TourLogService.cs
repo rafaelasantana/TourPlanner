@@ -132,7 +132,7 @@ public class TourLogService(IHttpClientWrapper httpClientWrapper)
     {
         try
         {
-            var url = $"tour-logs?$search={Uri.EscapeDataString(searchQuery)}&$expand=tour($select=name)";
+            var url = $"tour-logs/search?query={Uri.EscapeDataString(searchQuery)}";
             var response = await httpClientWrapper.GetAsync(url);
             var responseBody = await response.Content.ReadAsStringAsync();
 

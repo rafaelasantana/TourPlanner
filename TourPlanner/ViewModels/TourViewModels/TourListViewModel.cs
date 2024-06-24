@@ -32,8 +32,8 @@ public class TourListViewModel(TourService tourService, TimeFormatService timeFo
             foreach (var tour in tours)
             {
                 // Format the total time before adding to the observable collection
-                tour.FormattedEstimatedTime = TimeFormatService.ParseIso8601DurationToString(tour.EstimatedTime);
-                tour.PopularityFormatted = tour.Popularity?.ToString() ?? "No data yet";
+                tour.FormattedEstimatedTime = tour.EstimatedTime.Format();
+                tour.PopularityFormatted = PopularityToString(tour.Popularity);
                 Tours.Add(tour);
             }
         }
@@ -42,6 +42,17 @@ public class TourListViewModel(TourService tourService, TimeFormatService timeFo
             ErrorMessage = "No tours available.";
         }
     }
+
+    private string PopularityToString(Popularity? popularity) => popularity switch
+    {
+        Popularity.NotPopular => "Not popular",
+        Popularity.SlightlyPopular => "Slightly popular",
+        Popularity.ModeratelyPopular => "Moderately popular",
+        Popularity.Popular => "Popular",
+        Popularity.HighlyPopular => "Highly popular",
+        Popularity.ExtremelyPopular => "Extremely popular",
+        _ => "No data yet"
+    };
     
     public void NavigateToDetail(string tourId)
     {
