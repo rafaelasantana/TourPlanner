@@ -1,7 +1,7 @@
 window.initializeMap = (mapElement, startLat, startLng, endLat, endLng, routeGeometry) => {
     console.log("Rendering map - ", startLat, startLng, endLat, endLng);
 
-    window.map = L.map('map').setView([startLat, startLng], 8);
+    window.map = L.map('map').setView([startLng, startLat], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -17,8 +17,8 @@ window.initializeMap = (mapElement, startLat, startLng, endLat, endLng, routeGeo
 
     var route = L.polyline(polyline.decode(routeGeometry), {
         color: 'blue',
-        weight: 7,
-        opacity: 0.9,
+        weight: 8,
+        opacity: 0.8,
         lineJoin: 'round'
     }).addTo(window.map);
 

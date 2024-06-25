@@ -2,6 +2,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using TourPlanner.Models.ResponseModels;
 using TourPlanner.Models.TourModels;
+using TourPlanner.ViewModels.TourViewModels;
 
 namespace TourPlanner.Services;
 
@@ -225,6 +226,23 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
         catch (Exception)
         {
             return null;
+        }
+    }
+
+    public async ValueTask<(bool isSuccess, byte[]? fileContent)> GenerateReportAsync(ReportRequest reportRequest)
+    {
+        try
+        {
+            var response = await httpClientWrapper.PostAsJsonAsync("tours/report", reportRequest);
+
+            if (!response.IsSuccessStatusCode) return (false, null);
+
+            var fileContent = await response.Content.ReadAsByteArrayAsync();
+            return (true, fileContent);
+        }
+        catch (Exception ex)
+        {
+            return (false, null);
         }
     }
 }

@@ -4,6 +4,7 @@
 @using TourPlanner.ViewModels.TourViewModels
 @inject TourService TourService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 @rendermode InteractiveServer
 
 <PageTitle>Tour Report</PageTitle>
@@ -18,8 +19,8 @@
                     <label for="reportType" class="form-label">Report Type
                     </label>
                     <InputSelect id="reportType" class="form-control" @bind-Value="_viewModel.ReportType">
-                        <option value="single">Single Tour Report</option>
-                        <option value="summarized">Summarized Report</option>
+                        <option value="SingleTourReport">Single Tour Report</option>
+                        <option value="TourSummaryReport">Summarized Report</option>
                     </InputSelect>
                     <ValidationMessage For="() => _viewModel.ReportType" class="text-danger"></ValidationMessage>
 
@@ -60,7 +61,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _viewModel = new TourReportViewModel(TourService, NavigationManager);
+        _viewModel = new TourReportViewModel(TourService, NavigationManager, JSRuntime);
         await _viewModel.InitializeAsync();
         if (!string.IsNullOrEmpty(TourId))
         {
