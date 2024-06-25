@@ -52,6 +52,8 @@ public class TourModel
     [JsonPropertyName("estimatedTime")]
     [JsonConverter(typeof(TimeSpanConverter))]
     public TimeSpan EstimatedTime { get; set; }
+
+    public string RouteGeometry { get; set; } = string.Empty;
     
     // Extra for formatted time
     public string? FormattedEstimatedTime { get; set; } = string.Empty;

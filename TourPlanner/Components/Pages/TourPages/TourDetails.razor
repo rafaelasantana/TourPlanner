@@ -5,6 +5,7 @@
 @inject TourService TourService
 @inject TimeFormatService TimeFormatService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 @rendermode InteractiveServer
 
 
@@ -57,7 +58,7 @@
                         <CustomDetailCard CardLabel="Description" CardText="@_viewModel.Tour.Description"/>
                     </CustomWrapperLarge>
                 </div>
-                
+
             </CustomBodyWrapperRounded>
         </div>
         <div class="col-12 col-lg-6">
@@ -65,7 +66,7 @@
                 <div class="row justify-content-center ms-1">
                     <p class="fs-3 p-0">Map</p>
                     <div class="me-3" style="background-color: white; border-radius: 1rem; height: 30rem; display: flex; align-items: center; justify-content: center;">
-                        <img src="Images/map-placeholder.png" alt="Map Placeholder" style="border-radius: 1rem; width: 100%; height: 100%;">
+                        <div id="map" style="height: 100%; width: 100%;" @ref="map"></div>
                     </div>
                 </div>
             </CustomBodyWrapperRounded>
@@ -76,20 +77,30 @@
     <TourLogList TourId="@TourId"></TourLogList>
 </CustomBodyContainerWide>
 
-
 @code {
-    
+
     [Parameter]
     public string? TourId { get; set; }
 
+    private ElementReference map;
+
     private TourDetailsViewModel _viewModel = null!;
-    
+
     protected override async Task OnInitializedAsync()
     {
         _viewModel = new TourDetailsViewModel(TourService, TimeFormatService, NavigationManager)
-        {
-            TourId = TourId
-        };
+                     {
+                         TourId = TourId
+                     };
         await _viewModel.InitializeAsync();
+        StateHasChanged();
     }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+
+        await JSRuntime.InvokeVoidAsync("initializeMap", map, _viewModel.Tour.StartCoordinates.Latitude, _viewModel.Tour.StartCoordinates.Longitude, _viewModel.Tour.EndCoordinates.Latitude, _viewModel.Tour.EndCoordinates.Longitude, _viewModel.Tour.RouteGeometry);
+    }
+
 }

@@ -7,8 +7,7 @@ namespace TourPlanner.ViewModels.TourViewModels;
 
 public class TourDetailsViewModel(TourService tourService, TimeFormatService timeFormatService, NavigationManager navigationManager) : ObservableObject
 {
-    public TimeFormatService TimeFormatService { get; } = timeFormatService;
-    private TourModel _tour = new TourModel();
+    private TourModel _tour = new();
     private string? _errorMessage;
     private readonly string? _tourId;
     private string _estimatedTimeFormatted = string.Empty;
