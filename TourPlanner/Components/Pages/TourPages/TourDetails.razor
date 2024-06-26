@@ -65,7 +65,7 @@
             <CustomBodyWrapperRounded>
                 <div class="row justify-content-center ms-1">
                     <p class="fs-3 p-0">Map</p>
-                    <div class="me-3" style="background-color: white; border-radius: 1rem; height: 33rem; display: flex; align-items: center; justify-content: center;">
+                    <div class="me-3" style="background-color: white; border-radius: 1rem; height: 32rem; display: flex; align-items: center; justify-content: center;">
                         <div id="map" style="height: 100%; width: 100%;" @ref="map"></div>
                     </div>
                 </div>
@@ -95,12 +95,22 @@
         await _viewModel.InitializeAsync();
         StateHasChanged();
     }
-
+    
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (!firstRender) return;
+        if (firstRender)
+        {
+            // Add a small delay to ensure the map container is fully rendered
+            await Task.Delay(100);
 
-        await JSRuntime.InvokeVoidAsync("initializeMap", map, _viewModel.Tour.StartCoordinates.Latitude, _viewModel.Tour.StartCoordinates.Longitude, _viewModel.Tour.EndCoordinates.Latitude, _viewModel.Tour.EndCoordinates.Longitude, _viewModel.Tour.RouteGeometry);
+            await JSRuntime.InvokeVoidAsync("initializeMap", map, 
+                _viewModel.Tour.StartCoordinates.Latitude, 
+                _viewModel.Tour.StartCoordinates.Longitude, 
+                _viewModel.Tour.EndCoordinates.Latitude, 
+                _viewModel.Tour.EndCoordinates.Longitude, 
+                _viewModel.Tour.RouteGeometry);
+        }
     }
+
 
 }
