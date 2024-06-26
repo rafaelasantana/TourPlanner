@@ -62,7 +62,7 @@
             <ul class="list-group" style="border-radius: 0.8rem">
                 @foreach (var log in _viewModel.LatestLogs)
                 {
-                    <li class="list-group-item d-flex justify-content-between align-items-center anchor-hover-effect" style="height: 3rem">
+                    <li class="list-group-item d-flex justify-content-between align-items-center anchor-hover-effect" style="height: 3.5rem">
                         <i class="bi bi-pencil" style="margin-right: 0.5rem;"></i>
                         <div class="anchor-hover-effect" @onclick="() => _viewModel.NavigateToDetail(log.TourId)" style="cursor: pointer; width: 100%">
                             @log.Comment - @log.Tour.Name 
