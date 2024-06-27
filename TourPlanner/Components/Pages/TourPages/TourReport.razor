@@ -16,41 +16,53 @@
             <EditForm Model="@_viewModel" OnValidSubmit="@_viewModel.GenerateReport" FormName="generateTourReport" Enhance>
                 <DataAnnotationsValidator/>
                 <CustomWrapperLarge>
-                    <label for="reportType" class="form-label">Report Type
-                    </label>
+                    <label for="reportType" class="form-label">Report Type</label>
                     <InputSelect id="reportType" class="form-control" @bind-Value="_viewModel.ReportType">
                         <option value="SingleTourReport">Single Tour Report</option>
                         <option value="TourSummaryReport">Summarized Report</option>
                     </InputSelect>
                     <ValidationMessage For="() => _viewModel.ReportType" class="text-danger"></ValidationMessage>
 
-                    @if (_viewModel.ReportType == "single")
+                    @if (_viewModel.ReportType == "SingleTourReport")
                     {
-                    <label for="tourSelect" class="form-label mt-3">Select the Tour</label> 
-                    <InputSelect id="tourSelect" class="form-control" @bind-Value="_viewModel.SelectedTourId">
-                        @foreach (var tour in _viewModel.Tours)
-                        {
-                        <option value="@tour.Id">@tour.Name</option>
-                        }
-                    </InputSelect>
-                    <ValidationMessage For="() => _viewModel.SelectedTourId" class="text-danger"></ValidationMessage>
+                        <label for="tourSelect" class="form-label mt-3">Select the Tour</label> 
+                        <InputSelect id="tourSelect" class="form-control" @bind-Value="_viewModel.SelectedTourId">
+                            @foreach (var tour in _viewModel.Tours)
+                            {
+                                <option value="@tour.Id">@tour.Name</option>
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="() => _viewModel.SelectedTourId" class="text-danger"></ValidationMessage>
+                        
+                        <div class="alert alert-primary d-flex align-items-center mt-3" role="alert" style="border-radius: 1.5rem">
+                            <i class="bi bi-info-circle me-3"></i>
+                            <div>
+                                Provides detailed information about this tour
+                            </div>
+                        </div>
                     }
-
+                    else
+                    {
+                        <div class="alert alert-primary d-flex align-items-center mt-3" role="alert" style="border-radius: 1.5rem">
+                            <i class="bi bi-info-circle me-3"></i>
+                            <div>
+                                Provides average distance, time and rating for each tour
+                            </div>
+                        </div>
+                    }
                 </CustomWrapperLarge>
 
                 @if (!string.IsNullOrEmpty(_viewModel.ErrorMessage))
                 {
-                <div class="alert alert-danger rounded-pill" role="alert">
-                    @_viewModel.ErrorMessage
-                </div>
+                    <div class="alert alert-danger rounded-pill" role="alert">
+                        @_viewModel.ErrorMessage
+                    </div>
                 }
 
                 <FormSubmitButtonSingle ButtonText="Generate Report" IconClass="bi bi-download" ButtonClass="btn-outline-secondary"/>
-
             </EditForm>
         </CustomBodyWrapperRounded>
     </div>
-
 </CustomBodyContainerNarrow>
 
 @code {

@@ -10,6 +10,7 @@ public class ImportTourViewModel : ObservableObject
     private readonly TourService _tourService;
     private readonly NavigationManager _navigationManager;
     private string? _errorMessage;
+    private string _format = "xlsx";
     private bool _isSuccess;
     private IBrowserFile? _importFile;
 
@@ -23,6 +24,12 @@ public class ImportTourViewModel : ObservableObject
     {
         get => _errorMessage;
         private set => SetProperty(ref _errorMessage, value);
+    }
+    
+    public string Format
+    {
+        get => _format;
+        set => SetProperty(ref _format, value);
     }
     
     public bool IsSuccess
@@ -48,14 +55,15 @@ public class ImportTourViewModel : ObservableObject
 
         try
         {
-            await using var stream = ImportFile.OpenReadStream();
-            var result = await _tourService.ImportTourAsync(stream, "xlsx");
+            using var memoryStream = new MemoryStream();
+            await ImportFile.OpenReadStream().CopyToAsync(memoryStream);
+            memoryStream.Position = 0; // Reset the position to the beginning of the stream
+            var result = await _tourService.ImportTourAsync(memoryStream, _format);
 
             if (result.isSuccess)
             {
                 ErrorMessage = null;
                 IsSuccess = true;
-
             }
             else
             {

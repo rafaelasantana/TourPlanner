@@ -11,7 +11,7 @@ public class TourReportViewModel(TourService tourService, NavigationManager navi
 {
     private readonly NavigationManager _navigationManager = navigationManager;
 
-    private string _reportType = "single";
+    private string _reportType = "SingleTourReport";
     private string _selectedTourId = string.Empty;
     private string? _errorMessage;
     private List<TourModel> _tours = [];
@@ -23,7 +23,6 @@ public class TourReportViewModel(TourService tourService, NavigationManager navi
         set => SetProperty(ref _reportType, value);
     }
 
-    [Required(ErrorMessage = "Tour is required.")]
     public string SelectedTourId
     {
         get => _selectedTourId;
@@ -64,11 +63,13 @@ public class TourReportViewModel(TourService tourService, NavigationManager navi
                                     Payload = ReportType switch
                                     {
                                         "SingleTourReport" => JsonSerializer.Serialize(new { TourId = SelectedTourId }),
-                                        _ => JsonSerializer.Serialize(new { })
+                                        "TourSummaryReport" => JsonSerializer.Serialize(new { }),
+                                        _ => throw new InvalidOperationException("Unknown report type")
+
                                     }
                                 };
         var result = await tourService.GenerateReportAsync(request);
-
+        
         if (result is { isSuccess: true, fileContent: not null })
         {
             ErrorMessage = null;
@@ -78,6 +79,14 @@ public class TourReportViewModel(TourService tourService, NavigationManager navi
         else
         {
             ErrorMessage = "An error occurred while generating the report.";
+        }
+    }
+    
+    public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+    {
+        if (ReportType == "SingleTourReport" && string.IsNullOrEmpty(SelectedTourId))
+        {
+            yield return new ValidationResult("Tour is required for Single Tour Report", new[] { nameof(SelectedTourId) });
         }
     }
 }

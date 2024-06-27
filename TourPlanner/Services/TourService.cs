@@ -12,7 +12,7 @@ using Models;
 
 public class TourService(IHttpClientWrapper httpClientWrapper)
 {
-    private static JsonSerializerOptions jsonSerializerOptions = new()
+    private static readonly JsonSerializerOptions JsonSerializerOptions = new()
                                                                  {
                                                                      PropertyNameCaseInsensitive = true,
                                                                      PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
@@ -48,7 +48,7 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
 
             if (response.IsSuccessStatusCode)
             {
-                var tourResponse = await response.Content.ReadFromJsonAsync<TourListResponseModel>(options: jsonSerializerOptions);
+                var tourResponse = await response.Content.ReadFromJsonAsync<TourListResponseModel>(options: JsonSerializerOptions);
                 return tourResponse?.Tours;
             }
 
@@ -68,7 +68,7 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
 
             if (response.IsSuccessStatusCode)
             {
-                var tour = await response.Content.ReadFromJsonAsync<TourModel>(options: jsonSerializerOptions);
+                var tour = await response.Content.ReadFromJsonAsync<TourModel>(options: JsonSerializerOptions);
                 return (tour, null);
             }
 
@@ -158,14 +158,31 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
         }
     }
 
+
     public async Task<(bool isSuccess, string? errorMessage)> ImportTourAsync(Stream fileStream, string format)
     {
         try
         {
             using var content = new MultipartFormDataContent();
             var fileContent = new StreamContent(fileStream);
-            fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-            content.Add(fileContent, "SubmittedFile", "import.xlsx");
+        
+            string mimeType;
+            string fileExtension;
+
+            switch (format.ToLower())
+            {
+                case "csv":
+                    mimeType = "text/csv";
+                    fileExtension = "import.csv";
+                    break;
+                default:
+                    mimeType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                    fileExtension = "import.xlsx";
+                    break;
+            }
+
+            fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(mimeType);
+            content.Add(fileContent, "SubmittedFile", fileExtension);
 
             var requestUri = $"tours/import?format={format}";
             var response = await httpClientWrapper.PostAsync(requestUri, content);
@@ -187,6 +204,7 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
         }
     }
 
+
     public async Task<(List<TourModel>? tours, string? errorMessage)> SearchToursAsync(string searchQuery)
     {
         try
@@ -197,7 +215,7 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
 
             if (response.IsSuccessStatusCode)
             {
-                var toursResponse = JsonSerializer.Deserialize<TourListResponseModel>(responseBody, jsonSerializerOptions);
+                var toursResponse = JsonSerializer.Deserialize<TourListResponseModel>(responseBody, JsonSerializerOptions);
                 return (toursResponse?.Tours, null);
             }
             else
@@ -236,7 +254,7 @@ public class TourService(IHttpClientWrapper httpClientWrapper)
             var response = await httpClientWrapper.PostAsJsonAsync("tours/report", reportRequest);
 
             if (!response.IsSuccessStatusCode) return (false, null);
-
+            
             var fileContent = await response.Content.ReadAsByteArrayAsync();
             return (true, fileContent);
         }

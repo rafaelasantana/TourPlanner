@@ -12,7 +12,7 @@
 
 <PageTitle>Search</PageTitle>
 
-<CustomBodyContainerMedium>
+<CustomBodyContainerWide>
     <CustomBodyWrapperRounded>
         <CustomPrimaryHeader Text="Search"/>
         <EditForm method="get" Model="@_viewModel" OnValidSubmit="@_viewModel.SearchAsync" FormName="searchForm" Enhance>
@@ -47,7 +47,7 @@
             </Columns>
         </RadzenDataGrid>
     </CustomBodyWrapperRounded>
-</CustomBodyContainerMedium>
+</CustomBodyContainerWide>
 
 @code {
     private SearchViewModel _viewModel = null!;

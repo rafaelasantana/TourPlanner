@@ -11,6 +11,7 @@ public class ExportTourViewModel(TourService tourService, NavigationManager navi
     private string _selectedTourId = string.Empty;
     private List<TourModel> _tours = new();
     private string? _errorMessage;
+    private string _format = "xlsx";
     private bool _isExportSuccessful;
     public bool IncludeTourLogs = true;
     private byte[]? _exportedFileContent;
@@ -32,6 +33,12 @@ public class ExportTourViewModel(TourService tourService, NavigationManager navi
     {
         get => _errorMessage;
         private set => SetProperty(ref _errorMessage, value);
+    }
+    
+    public string Format
+    {
+        get => _format;
+        set => SetProperty(ref _format, value);
     }
 
     public bool IsExportSuccessful
@@ -71,16 +78,14 @@ public class ExportTourViewModel(TourService tourService, NavigationManager navi
         try
         {
             var tourIds = new List<string> { SelectedTourId };
-            var result = await tourService.ExportTourAsync(tourIds, IncludeTourLogs, "xlsx");
+            var result = await tourService.ExportTourAsync(tourIds, IncludeTourLogs, _format);
             if (result.isSuccess && result.fileContent != null)
             {
                 ErrorMessage = null;
                 ExportedFileContent = result.fileContent;
                 IsExportSuccessful = true;
 
-                var base64 = Convert.ToBase64String(ExportedFileContent);
-                var downloadLink = $"data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{base64}";
-                navigationManager.NavigateTo(downloadLink, true);
+                DownloadExportedTour();
             }
             else
             {
@@ -99,7 +104,8 @@ public class ExportTourViewModel(TourService tourService, NavigationManager navi
     {
         if (ExportedFileContent == null) return;
         var base64 = Convert.ToBase64String(ExportedFileContent);
-        var downloadLink = $"data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{base64}";
+        var mimeType = Format.ToLower() == "csv" ? "text/csv" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+        var downloadLink = $"data:{mimeType};base64,{base64}";
         navigationManager.NavigateTo(downloadLink, true);
     }
 }

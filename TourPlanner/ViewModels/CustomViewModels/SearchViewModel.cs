@@ -73,7 +73,7 @@ public class SearchViewModel(TourService tourService, TourLogService tourLogServ
             {
                 SearchResults.Add(new SearchResultModel(
                     tourId: log.TourId,
-                    title: log.Comment  + " - " + log.Tour.Name,
+                    title: log.Comment,
                     type: "Tour Log",
                     createdOn: log.CreatedOn
                 ));

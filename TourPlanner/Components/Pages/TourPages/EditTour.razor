@@ -13,8 +13,8 @@
     <CustomBodyWrapperRounded>
         @if (_viewModel.ShowConfirmation)
         {
-            <div class="row">
-                <div class="col-10">
+            <div class="row justify-content-center">
+                <div class="col-8 text-center">
                     <p>Are you sure you want to delete this tour?</p>
                     <div class="confirmation-dialog-buttons">
                         <button class="btn btn-outline-danger" @onclick="@(async () => await _viewModel.HandleConfirmation())" style="width: 8rem; border-radius: 1rem; margin-right: 0.5rem">

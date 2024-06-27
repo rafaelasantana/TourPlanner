@@ -25,6 +25,13 @@
                         </InputSelect>
                         <ValidationMessage For="() => _exportViewModel.SelectedTourId" class="text-danger"></ValidationMessage>
 
+                        <label for="exportFormat" class="form-label mt-2">Format
+                        </label>
+                        <InputSelect id="exportFormat" class="form-control" @bind-Value="_exportViewModel.Format">
+                            <option value="xlsx">xlsx</option>
+                            <option value="csv">csv</option>
+                        </InputSelect>
+
                         <div class="form-check form-switch mt-3 ms-1">
                             <input class="form-check-input" type="checkbox" id="includeLogsSwitch" @bind="_exportViewModel.IncludeTourLogs">
                             <label class="form-check-label" for="includeLogsSwitch">Include Tour Logs</label>
@@ -55,6 +62,14 @@
             </CustomBodyWrapperRounded>
             <CustomBodyWrapperRounded>
                 <CustomPrimaryHeader Text="Import"/>
+
+                <label for="importFormat" class="form-label">Format
+                </label>
+                <InputSelect id="importFormat" class="form-control mb-3" @bind-Value="_importViewModel.Format">
+                    <option value="xlsx">xlsx</option>
+                    <option value="csv">csv</option>
+                </InputSelect>
+                
                 <EditForm Model="@_importViewModel" OnValidSubmit="SubmitImportForm" FormName="importTour" Enhance>
                     <DataAnnotationsValidator/>
 
@@ -112,7 +127,7 @@
     {
         var file = e.File;
         _importViewModel.ImportFile = file;
-        _importViewModel.ResetStatus(); // Reset success status when a new file is selected
+        _importViewModel.ResetStatus();
     }
 
     private async Task SubmitImportForm()
