@@ -52,6 +52,7 @@ public class TourReportViewModel(TourService tourService, NavigationManager navi
         if (tours != null)
         {
             Tours = tours;
+            _selectedTourId = Tours[0].Id;
         }
     }
 
@@ -79,14 +80,6 @@ public class TourReportViewModel(TourService tourService, NavigationManager navi
         else
         {
             ErrorMessage = "An error occurred while generating the report.";
-        }
-    }
-    
-    public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-    {
-        if (ReportType == "SingleTourReport" && string.IsNullOrEmpty(SelectedTourId))
-        {
-            yield return new ValidationResult("Tour is required for Single Tour Report", new[] { nameof(SelectedTourId) });
         }
     }
 }
